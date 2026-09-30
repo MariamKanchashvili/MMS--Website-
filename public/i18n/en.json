@@ -2,8 +2,10 @@
     "NAV": {
     "HOME": "Home",
     "COMPANY": "Company",
+     "NEWS":"News",
     "PRODUCTS": "Products",
     "CONTACT": "Contact"
+    
   },
   "LANG": {
     "GE": "GE",
@@ -25,5 +27,28 @@
   "HOURS_VALUE": "Mon–Fri, 10:00–18:00",
   "RIGHTS": "All rights reserved",
   "DISCLAIMER": "The information on this website is intended for healthcare professionals and does not constitute medical advice."
+},
+"HOME": {
+  "TITLE": "Modern medical solutions in Georgia",
+  "TEXT": "Medical instruments and materials from leading international manufacturers in coronary, trauma & orthopedic and aesthetic medicine.",
+  "CONTACT_US": "Contact us",
+  "SUPPLIERS": "Our suppliers",
+  "LATEST_NEWS": "Latest news",
+  "READ_MORE": "Read more",
+  "PARTNERSHIP": "Partnership",
+  "PARTNER_TITLE": "Would you like to become our partner?",
+  "PARTNER_TEXT": "We work with clinics, healthcare institutions and manufacturers. Review our partnership terms and submit an application.",
+  "PARTNER_BTN": "Terms & application",
+  "ALL_NEWS":"All news"
+},
+"NEWS": {
+  "n1": {
+    "TITLE": "News title",
+    "SHORT": "Short summary for the home page.",
+    "TEXT": "Full text for the news page."
+  }
+},
+"NEWS_PAGE":{
+"TITLE":"News"
 }
 }

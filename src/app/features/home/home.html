@@ -1,1 +1,69 @@
-<p>home works!</p>
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <img class="hero-img" ngSrc="images/home/hero.webp" fill priority alt="">
+
+    <div class="hero-content">
+        <p class="eyebrow">Modern Medical Solution</p>
+        <h1>{{ 'HOME.TITLE' | translate }}</h1>
+        <p class="hero-text">{{ 'HOME.TEXT' | translate }}</p>
+
+        <div class="actions">
+            <a class="btn btn-gold" routerLink="/products">{{ 'NAV.PRODUCTS' | translate }}</a>
+            <a class="btn btn-ghost" routerLink="/contact">{{ 'HOME.CONTACT_US' | translate }}</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== მომწოდებლები ===== -->
+<section class="suppliers">
+    <p class="suppliers-title">{{ 'HOME.SUPPLIERS' | translate }}</p>
+
+    <div class="marquee">
+        <div class="marquee-track">
+            <!-- პირველი სია -->
+            @for (s of suppliers; track s.name) {
+                <div class="logo">
+                    <img [ngSrc]="s.logo" [alt]="s.name" width="160" height="60">
+                </div>
+            }
+            <!-- იგივე სია მეორედ: უწყვეტი მოძრაობისთვის -->
+            @for (s of suppliers; track s.name) {
+                <div class="logo" aria-hidden="true">
+                    <img [ngSrc]="s.logo" alt="" width="160" height="60">
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- ===== სიახლე + პარტნიორობა ===== -->
+<section class="info">
+
+    @if (latestNews) {
+        <a class="news-card reveal" [routerLink]="['/news', latestNews.id]">
+            <div class="news-img">
+                <img [ngSrc]="latestNews.image" fill alt="">
+            </div>
+            <div class="news-body">
+                <p class="label">{{ 'HOME.LATEST_NEWS' | translate }}</p>
+                <p class="date">{{ latestNews.date | date: 'dd.MM.yyyy' }}</p>
+                <h3>{{ ('NEWS.' + latestNews.id + '.TITLE') | translate }}</h3>
+                <p class="news-text">{{ ('NEWS.' + latestNews.id + '.SHORT') | translate }}</p>
+                <span class="more">{{ 'HOME.READ_MORE' | translate }} <span>→</span></span>
+<a class="all-news" routerLink="/news">{{ 'HOME.ALL_NEWS' | translate }} →</a>  
+
+            </div>
+           
+        </a>
+       
+    }
+
+    <div class="partner-card reveal">
+        <div class="stripes"><span></span><span></span><span></span></div>
+        <p class="label">{{ 'HOME.PARTNERSHIP' | translate }}</p>
+        <h3>{{ 'HOME.PARTNER_TITLE' | translate }}</h3>
+        <p class="partner-text">{{ 'HOME.PARTNER_TEXT' | translate }}</p>
+        <a class="btn btn-gold" routerLink="/partnership">{{ 'HOME.PARTNER_BTN' | translate }}</a>
+    </div>
+
+</section>
