@@ -1,0 +1,155 @@
+@use 'shared_variables' as *;
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: $color-logo-blue;
+    
+}
+
+// ლოგო
+.logo-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.logoPng{
+    width: 30px;
+    height: auto;
+    margin-top: -5px;
+}
+
+.companyName{
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    color: $color-logo-gold;
+    p{
+        font-weight: bold;
+        color: $color-logo-letter;
+        font-size: 12px;
+        padding-right: 5px
+    }
+
+    span{
+        color: $color-logo-gold;
+    }
+}
+
+.word-wrapper{
+    display: flex;
+    align-items: center;
+}
+
+// ნავიგაცია
+nav, ul{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+ a{
+     color: $color-text-heading;
+ }  
+}
+ 
+.language-switch{
+    display: flex;
+    gap: 5px;
+
+    button{
+        border: 1px solid $color-logo-gold;
+        background: transparent;
+        color: $color-border-strong;
+        padding: 4px;
+        cursor: pointer;
+
+        &.active{
+            background: $color-logo-gold;
+            color: #fff;
+        }
+    }
+}
+
+// BURGER BTN
+.burger-btn{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+
+    &:focus-visible{
+        outline: 2px solid $color-logo-blue;
+        outline-offset: 4px;
+    }
+
+    span{
+        width: 100%;
+        height: 3px;
+        background-color: $color-logo-gold;
+        border-radius: 2px;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        transform-origin: center;
+    }
+
+    &--open{
+        span{
+            &:nth-child(1){ transform: translateY(9.5px) rotate(45deg); }
+            &:nth-child(2){ opacity: 0; }
+            &:nth-child(3){ transform: translateY(-9.5px) rotate(-45deg); }
+        }
+    }
+}
+
+// მობილური
+@media screen and (max-width: 768px){
+    .burger-btn{
+        display: flex;
+    }
+
+    nav{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100dvh;
+        z-index: 99;
+        background-color: #fff;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease-in-out;
+        
+
+        &.nav--open{
+        background-color:$color-logo-blue;
+        right: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border:2px solid $color-logo-gold
+        }
+
+        ul{
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 80px 20px 20px;
+            gap: 20px;
+        }
+        a{
+            color: white;
+            cursor: pointer;
+            &:hover{
+            text-decoration: underline;
+            text-decoration-color: $color-logo-gold;
+            }
+        }
+    }
+}

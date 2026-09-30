@@ -1,0 +1,74 @@
+<footer class="footer">
+
+    <!-- ოქროსფერი ლენტები -->
+    <div class="ribbon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="footer-inner">
+
+        <!-- 1. ლოგო და აღწერა -->
+        <div>
+            <div class="brand-name">
+                <span><b>M</b>odern</span>
+                <span><b>M</b>edical</span>
+                <span><b>S</b>olution</span>
+            </div>
+            <p class="brand-text">{{ 'FOOTER.ABOUT' | translate }}</p>
+        </div>
+
+        <!-- 2. მიმართულებები -->
+        <div>
+            <h3>{{ 'FOOTER.DIRECTIONS' | translate }}</h3>
+            <ul>
+                <li><a routerLink="/products">{{ 'FOOTER.CORONARY' | translate }}</a></li>
+                <li><a routerLink="/products">{{ 'FOOTER.ORTHOPEDICS' | translate }}</a></li>
+                <li><a routerLink="/products">{{ 'FOOTER.AESTHETICS' | translate }}</a></li>
+            </ul>
+        </div>
+
+        <!-- 3. ნავიგაცია -->
+        <div>
+            <h3>{{ 'FOOTER.NAVIGATION' | translate }}</h3>
+            <ul>
+                <li><a routerLink="/">{{ 'NAV.HOME' | translate }}</a></li>
+                <li><a routerLink="/company">{{ 'NAV.COMPANY' | translate }}</a></li>
+                <li><a routerLink="/products">{{ 'NAV.PRODUCTS' | translate }}</a></li>
+                <li><a routerLink="/contact">{{ 'NAV.CONTACT' | translate }}</a></li>
+            </ul>
+        </div>
+
+        <!-- 4. კონტაქტი -->
+        <div>
+            <h3>{{ 'FOOTER.CONTACT' | translate }}</h3>
+            <ul class="contact">
+                <li>
+                    <small>{{ 'FOOTER.ADDRESS' | translate }}</small>
+                    {{ 'FOOTER.ADDRESS_VALUE' | translate }}
+                </li>
+                <li>
+                    <small>{{ 'FOOTER.PHONE' | translate }}</small>
+                    <a href="tel:+9955XXXXXXXX">+995 599 21 17 71</a>
+                </li>
+                <li>
+                    <small>{{ 'FOOTER.EMAIL' | translate }}</small>
+                    <a href="mailto:info@example.ge">sales@modernmedical.ge</a>
+                </li>
+                <li>
+                    <small>{{ 'FOOTER.HOURS' | translate }}</small>
+                    {{ 'FOOTER.HOURS_VALUE' | translate }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ქვედა ზოლი -->
+    <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+            <p>© {{ year }} Modern Medical Solution · {{ 'FOOTER.RIGHTS' | translate }}</p>
+            <p class="disclaimer">{{ 'FOOTER.DISCLAIMER' | translate }}</p>
+        </div>
+    </div>
+</footer>

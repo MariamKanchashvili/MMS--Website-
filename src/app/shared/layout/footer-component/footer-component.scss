@@ -1,0 +1,131 @@
+@use 'shared_variables' as *;
+
+.footer{
+    background: $color-logo-blue;   // თუ ღიაა, მუქი ლურჯი ცალკე ცვლადად დაამატეთ
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+}
+
+// ოქროსფერი ლენტები
+.ribbon{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    span{
+        display: block;
+        background: $color-logo-gold;
+
+        &:nth-child(1){ height: 4px; }
+        &:nth-child(2){ height: 2px; opacity: 0.7; }
+        &:nth-child(3){ height: 1px; opacity: 0.4; }
+    }
+}
+
+// 4 სვეტი
+.footer-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 56px 20px 32px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+}
+
+.brand-name{
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+
+    b{ color: $color-logo-gold; }
+}
+
+.brand-text{
+    line-height: 1.7;
+    max-width: 300px;
+}
+
+h3{
+    position: relative;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+
+    // პატარა ოქროსფერი ხაზი სათაურის ქვეშ
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 28px;
+        height: 2px;
+        background: $color-logo-gold;
+    }
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+a{
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.2s;
+
+    &:hover{ color: $color-logo-gold; }
+}
+
+.contact li{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    small{
+        color: $color-logo-gold;
+        font-size: 12px;
+    }
+}
+
+// ქვედა ზოლი
+.footer-bottom{
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.disclaimer{
+    max-width: 560px;
+    text-align: right;
+}
+
+// პლანშეტი: 2 სვეტი
+@media screen and (max-width: 900px){
+    .footer-inner{ grid-template-columns: 1fr 1fr; }
+}
+
+// მობილური: 1 სვეტი
+@media screen and (max-width: 560px){
+    .footer-inner{
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-top: 40px;
+    }
+
+    .footer-bottom-inner{ flex-direction: column; }
+    .disclaimer{ text-align: left; }
+}

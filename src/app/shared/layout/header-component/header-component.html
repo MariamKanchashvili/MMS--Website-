@@ -1,0 +1,70 @@
+<header class="container">
+
+    <!-- ლოგო -->
+    <a class="logo-wrapper" routerLink="/" (click)="closeMenu()">
+        <img src="images/mms_logo.png" alt="Modern Medical Solution" class="logoPng">
+        <div class="companyName">
+            <div class="word-wrapper">
+                <p>M</p><span>odern</span>
+            </div>
+            <div class="word-wrapper">
+                <p>M</p><span>edical</span>
+            </div>
+            <div class="word-wrapper">
+                <p>S</p><span>olution</span>
+            </div>
+        </div>
+    </a>
+
+    <!-- BURGER MENU -->
+    <button
+        type="button"
+        class="burger-btn"
+        [class.burger-btn--open]="isMenuOpen()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-label="Toggle menu"
+        (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- ნავიგაცია -->
+    <nav [class.nav--open]="isMenuOpen()">
+        <ul>
+            <li>
+                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">
+                    {{ 'NAV.HOME' | translate }}
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/company" routerLinkActive="active" (click)="closeMenu()">
+                    {{ 'NAV.COMPANY' | translate }}
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/products" routerLinkActive="active" (click)="closeMenu()">
+                    {{ 'NAV.PRODUCTS' | translate }}
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">
+                    {{ 'NAV.CONTACT' | translate }}
+                </a>
+            </li>
+
+            <li class="language-switch">
+                <button type="button" [class.active]="selectedLanguage() === 'ka'" (click)="switchLanguage('ka')">
+                    {{ 'LANG.GE' | translate }}
+                </button>
+                <button type="button" [class.active]="selectedLanguage() === 'en'" (click)="switchLanguage('en')">
+                    {{ 'LANG.EN' | translate }}
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+</header>
