@@ -1,1 +1,171 @@
-<p>contact works!</p>
+<!-- ===== 1. სათაურის ზოლი ===== -->
+<section class="page-head">
+    <div class="page-head-inner">
+        <p class="eyebrow">Modern Medical Solution</p>
+        <h1>{{ 'CONTACT_PAGE.TITLE' | translate }}</h1>
+        <p class="subtitle">{{ 'CONTACT_PAGE.SUBTITLE' | translate }}</p>
+    </div>
+    <div class="ribbon"><span></span><span></span><span></span></div>
+</section>
+
+
+<section class="contact-section">
+
+    <!-- ===== 2. ოთხი ბარათი ===== -->
+    <div class="info-grid">
+
+        <!-- მისამართი -->
+        <div class="info-card">
+            <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/>
+                    <circle cx="12" cy="10" r="2.5"/>
+                </svg>
+            </span>
+            <h3>{{ 'FOOTER.ADDRESS' | translate }}</h3>
+            <p>{{ 'FOOTER.ADDRESS_VALUE' | translate }}</p>
+        </div>
+
+        <!-- ტელეფონი: მთელი ბარათი დაჭერადია -->
+        <a class="info-card" [href]="contact.phoneLink">
+            <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>
+                </svg>
+            </span>
+            <h3>{{ 'FOOTER.PHONE' | translate }}</h3>
+            <p>{{ contact.phone }}</p>
+        </a>
+
+        <!-- ელ-ფოსტა: მთელი ბარათი დაჭერადია -->
+        <a class="info-card" [href]="contact.emailLink">
+            <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                    <path d="m3 7 9 6 9-6"/>
+                </svg>
+            </span>
+            <h3>{{ 'FOOTER.EMAIL' | translate }}</h3>
+            <p>{{ contact.email }}</p>
+        </a>
+
+        <!-- სამუშაო საათები -->
+        <div class="info-card">
+            <span class="icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M12 7v5l3 2"/>
+                </svg>
+            </span>
+            <h3>{{ 'FOOTER.HOURS' | translate }}</h3>
+            <p>{{ 'FOOTER.HOURS_VALUE' | translate }}</p>
+        </div>
+    </div>
+
+
+    <!-- ===== 3. საკონტაქტო პირები ===== -->
+    <div class="team">
+        <h2 class="section-title">{{ 'CONTACT_PAGE.TEAM_TITLE' | translate }}</h2>
+        <p class="section-text">{{ 'CONTACT_PAGE.TEAM_TEXT' | translate }}</p>
+
+        <!-- ხელმძღვანელობა: დიდი, ჰორიზონტალური ბარათები -->
+        <div class="leaders-grid">
+            @for (m of leadership; track m.id) {
+                <div class="leader">
+
+                    <div class="member-photo member-photo--large">
+                        @if (m.photo) {
+                            <img [ngSrc]="m.photo" fill [alt]="('TEAM.' + m.id + '.NAME') | translate">
+                        } @else {
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/>
+                            </svg>
+                        }
+                    </div>
+
+                    <div class="leader-info">
+                        <p class="role">{{ ('TEAM.' + m.id + '.ROLE') | translate }}</p>
+                        <h3>{{ ('TEAM.' + m.id + '.NAME') | translate }}</h3>
+
+                        <div class="member-contacts member-contacts--left">
+                            <a [href]="phoneLink(m.phone)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>
+                                </svg>
+                                {{ m.phone }}
+                            </a>
+                            <a [href]="'mailto:' + m.email">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                    <path d="m3 7 9 6 9-6"/>
+                                </svg>
+                                {{ m.email }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- მენეჯერები -->
+        <div class="team-grid">
+            @for (m of managers; track m.id) {
+                <div class="member">
+
+                    <div class="member-photo">
+                        @if (m.photo) {
+                            <img [ngSrc]="m.photo" fill [alt]="('TEAM.' + m.id + '.NAME') | translate">
+                        } @else {
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/>
+                            </svg>
+                        }
+                    </div>
+
+                    <h3>{{ ('TEAM.' + m.id + '.NAME') | translate }}</h3>
+                    <p class="role">{{ ('TEAM.' + m.id + '.ROLE') | translate }}</p>
+
+                    <div class="member-contacts">
+                        <a [href]="phoneLink(m.phone)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>
+                            </svg>
+                            {{ m.phone }}
+                        </a>
+                        <a [href]="'mailto:' + m.email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                <path d="m3 7 9 6 9-6"/>
+                            </svg>
+                            {{ m.email }}
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+    <!-- ===== 4. რუკა ===== -->
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.1810232416424!2d44.72823717631768!3d41.71661247126003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4044730033ab9111%3A0x9b8bad83e67b78ad!2z4YOj4YOc4YOY4YOV4YOU4YOg4YOh4YOY4YOi4YOU4YOi4YOY4YOhIOGDpeGDo-GDqeGDkCAzOCDhg5Eg4YOR4YOg4YOY4YOi4YOQ4YOc4YOY4YOQIOGDpeGDneGDnOGDoeGDl-GDoOGDkOGDpeGDqOGDlOGDnOGDmA!5e0!3m2!1sen!2sge!4v1790855360249!5m2!1sen!2sge" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+            [title]="'CONTACT_PAGE.MAP_TITLE' | translate"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+
+    <!-- ===== 5. პარტნიორობის ბმული ===== -->
+    <a class="partner-link" routerLink="/partnership">
+        <div>
+            <h3>{{ 'CONTACT_PAGE.PARTNER_TITLE' | translate }}</h3>
+            <p>{{ 'CONTACT_PAGE.PARTNER_TEXT' | translate }}</p>
+        </div>
+        <span class="arrow">→</span>
+    </a>
+
+</section>

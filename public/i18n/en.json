@@ -93,5 +93,36 @@
 },
 "COMMON": {
   "SCROLL_TOP": "Back to top"
+},
+"CONTACT_PAGE": {
+  "TITLE": "Contact",
+  "SUBTITLE": "Get in touch with any question about our products, delivery or partnership.",
+  "TEAM_TITLE": "Contact persons",
+  "TEAM_TEXT": "Reach the manager responsible for your area directly.",
+  "MAP_TITLE": "Office location on the map",
+  "PARTNER_TITLE": "Interested in partnership?",
+  "PARTNER_TEXT": "Learn about our partnership terms"
+},
+"TEAM": {
+  "ceo": {
+    "NAME": "Name Surname",
+    "ROLE": "Chief Executive Officer"
+  },
+  "head-sales": {
+    "NAME": "Name Surname",
+    "ROLE": "Head of Sales"
+  },
+  "m1": {
+    "NAME": "Name Surname",
+    "ROLE": "Sales Manager · Coronary"
+  },
+  "m2": {
+    "NAME": "Name Surname",
+    "ROLE": "Sales Manager · Orthopedics"
+  },
+  "m3": {
+    "NAME": "Name Surname",
+    "ROLE": "Sales Manager · Aesthetic"
+  }
 }
 }
