@@ -1,1 +1,91 @@
-<p>partnership works!</p>
+<!-- ===== 1. სათაურის ზოლი =====
+     იგივე სტილი, რაც სიახლეების გვერდზე: საიტი ერთიანად გამოიყურება -->
+<section class="page-head">
+    <div class="page-head-inner">
+        <p class="eyebrow">Modern Medical Solution</p>
+        <h1>{{ 'PARTNERSHIP_PAGE.TITLE' | translate }}</h1>
+        <p class="subtitle">{{ 'PARTNERSHIP_PAGE.SUBTITLE' | translate }}</p>
+    </div>
+    <div class="ribbon"><span></span><span></span><span></span></div>
+</section>
+
+
+<!-- ===== 2. შიგთავსი: მარცხნივ ტექსტი, მარჯვნივ ფოტო ===== -->
+<section class="content">
+
+    <!-- მარცხენა სვეტი: ტექსტი -->
+    <div class="text-col">
+
+        <!-- შესავალი -->
+        <p class="intro">{{ 'PARTNERSHIP_PAGE.INTRO' | translate }}</p>
+
+        <!-- ვისთან ვთანამშრომლობთ -->
+        <div class="block">
+            <h2>{{ 'PARTNERSHIP_PAGE.WHO_TITLE' | translate }}</h2>
+            <ul class="list">
+                @for (item of partners; track item) {
+                    <li>{{ item | translate }}</li>
+                }
+            </ul>
+        </div>
+
+        <!-- რას გთავაზობთ: ✓ ნიშნებით -->
+        <div class="block">
+            <h2>{{ 'PARTNERSHIP_PAGE.OFFER_TITLE' | translate }}</h2>
+            <ul class="list list--check">
+                @for (item of offers; track item) {
+                    <li>{{ item | translate }}</li>
+                }
+            </ul>
+        </div>
+
+        <!-- პირობები -->
+        <div class="block">
+            <h2>{{ 'PARTNERSHIP_PAGE.TERMS_TITLE' | translate }}</h2>
+            <ul class="list">
+                @for (item of terms; track item) {
+                    <li>{{ item | translate }}</li>
+                }
+            </ul>
+        </div>
+
+        <!-- როგორ დავიწყოთ: დანომრილი ნაბიჯები.
+             $index არის @for-ის ჩაშენებული ცვლადი: 0, 1, 2...
+             +1 იმიტომ, რომ ნომრები 1-დან დავიწყოთ და არა 0-დან -->
+        <div class="block">
+            <h2>{{ 'PARTNERSHIP_PAGE.STEPS_TITLE' | translate }}</h2>
+            <ol class="steps">
+                @for (step of steps; track step.title) {
+                    <li class="step">
+                        <span class="step-number">{{ $index + 1 }}</span>
+                        <div>
+                            <h3>{{ step.title | translate }}</h3>
+                            <p>{{ step.text | translate }}</p>
+                        </div>
+                    </li>
+                }
+            </ol>
+        </div>
+    </div>
+
+    <!-- მარჯვენა სვეტი: ფოტო. -->
+    <div class="visual">
+        <div class="visual-frame">
+            <img ngSrc="images/partnership/partnership.webp" fill
+                 [alt]="'PARTNERSHIP_PAGE.IMAGE_ALT' | translate">
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== 3. მოწოდება: ფორმის ნაცვლად =====
+     დაინტერესებულ ადამიანს ეუბნება, რა გააკეთოს შემდეგ -->
+<section class="cta">
+    <div class="cta-inner">
+        <div>
+            <h2>{{ 'PARTNERSHIP_PAGE.CTA_TITLE' | translate }}</h2>
+            <p>{{ 'PARTNERSHIP_PAGE.CTA_TEXT' | translate }}</p>
+        </div>
+        <a class="btn-gold" routerLink="/contact">{{ 'PARTNERSHIP_PAGE.CTA_BTN' | translate }}</a>
+    </div>
+</section>

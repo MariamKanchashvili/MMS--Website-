@@ -79,6 +79,9 @@ a{
     transition: color 0.2s;
 
     &:hover{ color: $color-logo-gold; }
+    &.active{
+        color: $color-logo-gold;
+    }
 }
 
 .contact li{

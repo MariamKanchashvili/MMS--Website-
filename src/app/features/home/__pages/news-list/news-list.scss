@@ -1,0 +1,91 @@
+@use 'shared_variables' as *;
+
+// ===== სათაურის ზოლი =====
+.page-head{
+    position: relative;
+    background: $color-logo-blue;
+    color: #fff;
+}
+
+.page-head-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 20px 56px;
+    animation: fadeUp 0.8s ease-out both;
+
+    h1{
+        font-size: 38px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+}
+
+.eyebrow{
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $color-logo-gold;
+    margin-bottom: 14px;
+}
+
+.subtitle{
+    max-width: 560px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+// ოქროსფერი ლენტები ქვედა კიდეზე
+.ribbon{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    span{
+        display: block;
+        background: $color-logo-gold;
+
+        &:nth-child(1){ height: 1px; opacity: 0.4; }
+        &:nth-child(2){ height: 2px; opacity: 0.7; }
+        &:nth-child(3){ height: 4px; }
+    }
+}
+
+// ===== ბადე =====
+.news-section{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 20px 80px;
+}
+
+.news-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+
+    app-news-card{
+        animation: fadeUp 0.7s ease-out both;
+
+        &:nth-child(2){ animation-delay: 0.1s; }
+        &:nth-child(3){ animation-delay: 0.2s; }
+    }
+}
+
+.empty{
+    text-align: center;
+    color: #8a94a3;
+    padding: 40px 0;
+}
+
+@keyframes fadeUp{
+    from{ opacity: 0; transform: translateY(24px); }
+    to{ opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 900px){
+    .news-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (max-width: 600px){
+    .news-grid{ grid-template-columns: 1fr; }
+    .page-head-inner h1{ font-size: 28px; }
+}

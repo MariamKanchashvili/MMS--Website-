@@ -1,0 +1,49 @@
+@use 'shared_variables' as *;
+
+.scroll-top{
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 900;                // header-ის (1000) ქვემოთ, კონტენტის ზემოთ
+    width: 46px;
+    height: 46px;
+    border: 1px solid $color-logo-gold;
+    border-radius: 50%;
+    background: $color-logo-blue;
+    color: $color-logo-gold;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(14, 42, 77, 0.25);
+
+    // დამალული მდგომარეობა: გამჭვირვალე და ოდნავ ქვემოთ
+    opacity: 0;
+    visibility: hidden;          // დამალულს ვერც დააჭერ და ვერც Tab-ით მიხვალ
+    transform: translateY(16px);
+    transition: opacity 0.3s, transform 0.3s, visibility 0.3s, background 0.2s;
+
+    // ხილული მდგომარეობა
+    &--visible{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &:hover{
+        background: $color-logo-gold;
+        color: #fff;
+    }
+
+    &:focus-visible{
+        outline: 2px solid $color-logo-gold;
+        outline-offset: 3px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .scroll-top{
+        right: 16px;
+        bottom: 16px;
+        width: 42px;
+        height: 42px;
+    }
+}

@@ -245,18 +245,22 @@
         transition: transform 0.2s;
     }
 }
-.all-news{
-        cursor: pointer;
-    border: 1px solid $color-logo-blue;
-    color: $color-logo-blue;
-    background-color: $color-logo-gold;
-    padding: 2px;
-    text-align: center;
-    position: absolute;
-    bottom: 2px;
-    right: 2px;
-    font-size: 11px
+.news-col{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
+    .news-card{ flex: 1; }   // ბარათი პარტნიორობის ბარათის სიმაღლეს ემთხვევა
+}
+
+.all-news{
+    align-self: flex-end;
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-logo-blue;
+    transition: color 0.2s;
+
+    &:hover{ color: $color-logo-gold; }
 }
 
 // პარტნიორობის ბარათი

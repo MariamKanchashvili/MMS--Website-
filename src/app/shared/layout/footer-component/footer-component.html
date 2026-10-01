@@ -33,11 +33,18 @@
         <div>
             <h3>{{ 'FOOTER.NAVIGATION' | translate }}</h3>
             <ul>
-                <li><a routerLink="/">{{ 'NAV.HOME' | translate }}</a></li>
-                <li><a routerLink="/company">{{ 'NAV.COMPANY' | translate }}</a></li>
-                <li><a routerLink="/products">{{ 'NAV.PRODUCTS' | translate }}</a></li>
-                <li><a routerLink="/contact">{{ 'NAV.CONTACT' | translate }}</a></li>
-                <li><a routerLink="/news">{{ 'NAV.NEWS' | translate }}</a></li>
+             <!-- 3. ნავიგაცია -->
+<div>
+    <h3>{{ 'FOOTER.NAVIGATION' | translate }}</h3>
+    <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">{{ 'NAV.HOME' | translate }}</a></li>
+        <li><a routerLink="/company" routerLinkActive="active">{{ 'NAV.COMPANY' | translate }}</a></li>
+        <li><a routerLink="/products" routerLinkActive="active">{{ 'NAV.PRODUCTS' | translate }}</a></li>
+        <li><a routerLink="/news" routerLinkActive="active">{{ 'NAV.NEWS' | translate }}</a></li>
+        <li><a routerLink="/partnership" routerLinkActive="active">{{ 'NAV.PARTNERSHIP' | translate }}</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">{{ 'NAV.CONTACT' | translate }}</a></li>
+    </ul>
+</div>
             </ul>
         </div>
 

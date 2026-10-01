@@ -1,13 +1,24 @@
 @use 'shared_variables' as *;
 
+:host{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;            // left + right = მთელი სიგანე
+    z-index: 1000;       
+    background: $color-logo-blue;  
+    border-bottom: 1px solid rgba(201, 162, 74, 0.5);  
+}
 .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    padding: 10px 15px;
-    background-color: $color-logo-blue;
-    
+    // border-bottom: 1px solid $color-logo-gold;
+    max-width: 1200px; 
+    height: $header-height;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 // ლოგო
@@ -19,31 +30,36 @@
 }
 
 .logoPng{
-    width: 30px;
-    height: auto;
-    margin-top: -5px;
+    width: auto;
+    height: 44px;
+    margin-top: 0;
 }
 
 .companyName{
     display: flex;
     flex-direction: column;
-    font-size: 11px;
+    justify-content: space-between;
+    height: 44px;
+    font-size: 13px;
+     line-height: 1;
     color: $color-logo-gold;
     p{
-        font-weight: bold;
+        font-weight: 700;
         color: $color-logo-letter;
-        font-size: 12px;
-        padding-right: 5px
+     
+       
     }
 
     span{
+        font-weight: 500;             
         color: $color-logo-gold;
     }
 }
 
 .word-wrapper{
     display: flex;
-    align-items: center;
+    align-items: baseline;
+    gap: 0;
 }
 
 // ნავიგაცია
@@ -53,6 +69,9 @@ nav, ul{
     gap: 15px;
  a{
      color: $color-text-heading;
+     &.active{
+        color: $color-logo-gold;
+    }
  }  
 }
  

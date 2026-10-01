@@ -1,0 +1,11 @@
+<a class="card" [routerLink]="['/news', news().id]">
+    <div class="card-img">
+        <img [ngSrc]="news().image" fill alt="">
+    </div>
+    <div class="card-body">
+        <p class="date">{{ news().date | date: 'dd.MM.yyyy' }}</p>
+        <h3>{{ ('NEWS.' + news().id + '.TITLE') | translate }}</h3>
+        <p class="short">{{ ('NEWS.' + news().id + '.SHORT') | translate }}</p>
+        <span class="more">{{ 'HOME.READ_MORE' | translate }} <span>→</span></span>
+    </div>
+</a>

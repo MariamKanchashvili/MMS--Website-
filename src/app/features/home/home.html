@@ -39,7 +39,8 @@
 <!-- ===== სიახლე + პარტნიორობა ===== -->
 <section class="info">
 
-    @if (latestNews) {
+   @if (latestNews) {
+    <div class="news-col">
         <a class="news-card reveal" [routerLink]="['/news', latestNews.id]">
             <div class="news-img">
                 <img [ngSrc]="latestNews.image" fill alt="">
@@ -50,13 +51,12 @@
                 <h3>{{ ('NEWS.' + latestNews.id + '.TITLE') | translate }}</h3>
                 <p class="news-text">{{ ('NEWS.' + latestNews.id + '.SHORT') | translate }}</p>
                 <span class="more">{{ 'HOME.READ_MORE' | translate }} <span>→</span></span>
-<a class="all-news" routerLink="/news">{{ 'HOME.ALL_NEWS' | translate }} →</a>  
-
             </div>
-           
         </a>
-       
-    }
+
+        <a class="all-news" routerLink="/news">{{ 'HOME.ALL_NEWS' | translate }} →</a>
+    </div>
+}
 
     <div class="partner-card reveal">
         <div class="stripes"><span></span><span></span><span></span></div>

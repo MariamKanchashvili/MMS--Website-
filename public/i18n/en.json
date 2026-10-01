@@ -4,7 +4,8 @@
     "COMPANY": "Company",
      "NEWS":"News",
     "PRODUCTS": "Products",
-    "CONTACT": "Contact"
+    "CONTACT": "Contact",
+    "PARTNERSHIP": "Partnership"
     
   },
   "LANG": {
@@ -37,18 +38,60 @@
   "READ_MORE": "Read more",
   "PARTNERSHIP": "Partnership",
   "PARTNER_TITLE": "Would you like to become our partner?",
-  "PARTNER_TEXT": "We work with clinics, healthcare institutions and manufacturers. Review our partnership terms and submit an application.",
-  "PARTNER_BTN": "Terms & application",
+  "PARTNER_TEXT": "We work with clinics, healthcare institutions and manufacturers. Learn about our partnership terms.",
+  "PARTNER_BTN": "Partnership terms",
   "ALL_NEWS":"All news"
+},
+"NEWS_PAGE": {
+  "TITLE": "News",
+  "SUBTITLE": "Company news, new products and events.",
+  "ALL": "All news",
+  "OTHER": "More news",
+  "EMPTY": "No news yet.",
+  "NOT_FOUND": "News not found"
 },
 "NEWS": {
   "n1": {
     "TITLE": "News title",
-    "SHORT": "Short summary for the home page.",
-    "TEXT": "Full text for the news page."
+    "SHORT": "Short summary for the card.",
+    "TEXT": "First paragraph.\n\nSecond paragraph."
   }
 },
-"NEWS_PAGE":{
-"TITLE":"News"
+"PARTNERSHIP_PAGE": {
+  "TITLE": "Partnership",
+  "SUBTITLE": "We build long-term relationships that serve quality healthcare.",
+  "INTRO": "Modern Medical Solution is open to cooperation with healthcare institutions, manufacturers and distributors. Our goal is to make modern, certified medical products accessible in Georgia.",
+
+  "WHO_TITLE": "Who we work with",
+  "WHO_1": "Clinics and healthcare institutions",
+  "WHO_2": "International manufacturers seeking representation in Georgia",
+  "WHO_3": "Regional distributors and pharmacy chains",
+
+  "OFFER_TITLE": "What we offer",
+  "OFFER_1": "Officially registered and certified products",
+  "OFFER_2": "Complete technical documentation and instructions for use",
+  "OFFER_3": "Product training and consultations for medical staff",
+  "OFFER_4": "Flexible delivery and individual terms",
+
+  "TERMS_TITLE": "Terms of cooperation",
+  "TERM_1": "The partner must be a registered legal entity",
+  "TERM_2": "For healthcare institutions, a valid license or permit",
+  "TERM_3": "Specific terms are agreed individually, based on a contract",
+
+  "STEPS_TITLE": "How to get started",
+  "STEP_1_TITLE": "Contact us",
+  "STEP_1_TEXT": "Write or call us and briefly tell us about your organization.",
+  "STEP_2_TITLE": "Get acquainted",
+  "STEP_2_TEXT": "We'll meet to discuss your needs and the cooperation format.",
+  "STEP_3_TITLE": "Agreement",
+  "STEP_3_TEXT": "We'll agree on terms and sign a partnership agreement.",
+
+  "IMAGE_ALT": "Partnership",
+  "CTA_TITLE": "Interested in working with us?",
+  "CTA_TEXT": "Get in touch and let's discuss how we can work together.",
+  "CTA_BTN": "Contact us"
+},
+"COMMON": {
+  "SCROLL_TOP": "Back to top"
 }
 }

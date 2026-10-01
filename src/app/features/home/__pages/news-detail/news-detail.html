@@ -1,1 +1,49 @@
-<p>news-detail works!</p>
+@if (news(); as item) {
+
+    <article class="article">
+        <a class="back" routerLink="/news">← {{ 'NEWS_PAGE.ALL' | translate }}</a>
+
+        <p class="date">{{ item.date | date: 'dd.MM.yyyy' }}</p>
+        <h1>{{ ('NEWS.' + item.id + '.TITLE') | translate }}</h1>
+
+        <div class="cover">
+            <img [ngSrc]="item.image" fill priority alt="">
+        </div>
+
+        <div class="text">{{ ('NEWS.' + item.id + '.TEXT') | translate }}</div>
+
+        <!-- დამატებითი ფოტოები -->
+        @if (item.gallery?.length) {
+            <div class="gallery">
+                @for (photo of item.gallery; track photo) {
+                    <div class="gallery-item">
+                        <img [ngSrc]="photo" fill alt="">
+                    </div>
+                }
+            </div>
+        }
+    </article>
+
+    <!-- სხვა სიახლეები -->
+    @if (otherNews().length) {
+        <section class="other">
+            <div class="other-inner">
+                <h2>{{ 'NEWS_PAGE.OTHER' | translate }}</h2>
+                <div class="other-grid">
+                    @for (n of otherNews(); track n.id) {
+                        <app-news-card [news]="n" />
+                    }
+                </div>
+            </div>
+        </section>
+    }
+
+} @else {
+
+    <!-- თუ ასეთი id არ არსებობს -->
+    <div class="not-found">
+        <h1>{{ 'NEWS_PAGE.NOT_FOUND' | translate }}</h1>
+        <a class="back" routerLink="/news">← {{ 'NEWS_PAGE.ALL' | translate }}</a>
+    </div>
+
+}

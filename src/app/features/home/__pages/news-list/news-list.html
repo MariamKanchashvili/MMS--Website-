@@ -1,15 +1,22 @@
-<section class="news-page">
-    <h1>{{ 'NEWS_PAGE.TITLE' | translate }}</h1>
-
-    <div class="news-grid">
-        @for (item of news; track item.id) {
-            <a class="news-item" [routerLink]="['/news', item.id]">
-                <div class="news-item-img">
-                    <img [ngSrc]="item.image" fill alt="">
-                </div>
-                <p class="date">{{ item.date | date: 'dd.MM.yyyy' }}</p>
-                <h3>{{ ('NEWS.' + item.id + '.TITLE') | translate }}</h3>
-            </a>
-        }
+<!-- გვერდის სათაური -->
+<section class="page-head">
+    <div class="page-head-inner">
+        <p class="eyebrow">Modern Medical Solution</p>
+        <h1>{{ 'NEWS_PAGE.TITLE' | translate }}</h1>
+        <p class="subtitle">{{ 'NEWS_PAGE.SUBTITLE' | translate }}</p>
     </div>
+    <div class="ribbon"><span></span><span></span><span></span></div>
+</section>
+
+<!-- სიახლეები -->
+<section class="news-section">
+    @if (news.length) {
+        <div class="news-grid">
+            @for (item of news; track item.id) {
+                <app-news-card [news]="item" />
+            }
+        </div>
+    } @else {
+        <p class="empty">{{ 'NEWS_PAGE.EMPTY' | translate }}</p>
+    }
 </section>
