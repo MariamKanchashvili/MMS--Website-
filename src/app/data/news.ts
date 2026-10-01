@@ -7,5 +7,7 @@ export interface NewsItem {
 
 // ყველაზე ახალი ყოველთვის პირველი უნდა იყოს
 export const NEWS: NewsItem[] = [
-  { id: 'n1', date: '2026-09-30', image: 'images/news/n1.webp' ,gallery:['images/news/n1-1.webp', 'images/news/n1-2.webp']},
+  { id: 'n1', date: '2026-09-15', image: 'images/news/n1.jpg' ,
+    // gallery:['images/news/n1-1.webp', 'images/news/n1-2.webp']
+  },
 ].sort((a, b) => b.date.localeCompare(a.date));;
