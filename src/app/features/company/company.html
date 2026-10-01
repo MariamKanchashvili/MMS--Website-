@@ -1,1 +1,155 @@
-<p>company works!</p>
+<!-- ===== 1. სათაურის ზოლი ===== -->
+<section class="page-head">
+    <div class="page-head-inner">
+        <p class="eyebrow">Modern Medical Solution</p>
+        <h1>{{ 'COMPANY_PAGE.TITLE' | translate }}</h1>
+        <p class="subtitle">{{ 'COMPANY_PAGE.SUBTITLE' | translate }}</p>
+    </div>
+    <div class="ribbon"><span></span><span></span><span></span></div>
+</section>
+
+
+<!-- ===== 2. ვინ ვართ ===== -->
+<section class="intro">
+    <div class="intro-text">
+        <p class="label">{{ 'COMPANY_PAGE.INTRO_LABEL' | translate }}</p>
+        <h2>{{ 'COMPANY_PAGE.INTRO_TITLE' | translate }}</h2>
+        <p class="lead">{{ 'COMPANY_PAGE.INTRO_TEXT_1' | translate }}</p>
+        <p>{{ 'COMPANY_PAGE.INTRO_TEXT_2' | translate }}</p>
+    </div>
+
+    <div class="intro-visual">
+        <div class="visual-frame">
+            <img ngSrc="images/company/about.webp" fill
+                 [alt]="'COMPANY_PAGE.IMAGE_ALT' | translate">
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== 3. ციფრები =====
+     let i = $index: ელემენტის ნომერი (0, 1, 2, 3).
+     counts()[i]: ამ ელემენტის მიმდინარე (ანიმაციური) რიცხვი -->
+<section class="stats"  #statsSection>
+    <div class="ribbon ribbon--top"><span></span><span></span><span></span></div>
+    <div class="stats-inner">
+        @for (s of stats; track s.label; let i = $index) {
+            <div class="stat">
+                <span class="stat-value">{{ counts()[i] }}{{ s.suffix }}</span>
+                <span class="stat-label">{{ s.label | translate }}</span>
+            </div>
+        }
+    </div>
+</section>
+
+
+<!-- ===== 4. ღირებულებები ===== -->
+<section class="values">
+    <div class="section-inner">
+        <h2 class="section-title">{{ 'COMPANY_PAGE.VALUES_TITLE' | translate }}</h2>
+        <p class="section-text">{{ 'COMPANY_PAGE.VALUES_TEXT' | translate }}</p>
+
+        <div class="values-grid">
+            <!-- ხარისხი -->
+            <div class="value-card">
+                <span class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/>
+                        <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                </span>
+                <h3>{{ 'COMPANY_PAGE.VALUE_1_TITLE' | translate }}</h3>
+                <p>{{ 'COMPANY_PAGE.VALUE_1_TEXT' | translate }}</p>
+            </div>
+
+            <!-- სანდოობა -->
+            <div class="value-card">
+                <span class="icon">
+                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+                <path d="M15 18H9"/>
+                <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+                <circle cx="17" cy="18" r="2"/>
+                <circle cx="7" cy="18" r="2"/>
+              </svg>
+                </span>
+                <h3>{{ 'COMPANY_PAGE.VALUE_2_TITLE' | translate }}</h3>
+                <p>{{ 'COMPANY_PAGE.VALUE_2_TEXT' | translate }}</p>
+            </div>
+
+            <!-- მხარდაჭერა -->
+            <div class="value-card">
+                <span class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m11 17 2 2a1 1 0 1 0 3-3"/>
+    <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/>
+    <path d="m21 3 1 11h-2"/>
+    <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/>
+    <path d="M3 4h8"/>
+</svg>
+                </span>
+                <h3>{{ 'COMPANY_PAGE.VALUE_3_TITLE' | translate }}</h3>
+                <p>{{ 'COMPANY_PAGE.VALUE_3_TEXT' | translate }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== 5. რატომ ჩვენ ===== -->
+<section class="why">
+    <div class="section-inner">
+        <h2 class="section-title">{{ 'COMPANY_PAGE.WHY_TITLE' | translate }}</h2>
+
+        <div class="why-grid">
+            @for (item of whyUs; track item.title) {
+                <div class="why-item">
+                    <span class="check">✓</span>
+                    <div>
+                        <h3>{{ item.title | translate }}</h3>
+                        <p>{{ item.text | translate }}</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== 6. ხარისხი და სერტიფიკატები ===== -->
+<section class="certs">
+    <div class="section-inner">
+        <h2 class="section-title">{{ 'COMPANY_PAGE.CERTS_TITLE' | translate }}</h2>
+        <p class="section-text">{{ 'COMPANY_PAGE.CERTS_TEXT' | translate }}</p>
+
+        <div class="certs-grid">
+            @for (cert of certificates; track cert) {
+                <div class="cert">
+                    <span class="cert-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+                            <path d="M14 3v6h6"/>
+                            <path d="m9 15 2 2 4-4"/>
+                        </svg>
+                    </span>
+                    <p>{{ cert | translate }}</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+<!-- ===== 7. მოწოდება ===== -->
+<section class="cta">
+    <div class="cta-inner">
+        <div>
+            <h2>{{ 'COMPANY_PAGE.CTA_TITLE' | translate }}</h2>
+            <p>{{ 'COMPANY_PAGE.CTA_TEXT' | translate }}</p>
+        </div>
+        <div class="cta-actions">
+            <a class="btn btn-gold" routerLink="/contact">{{ 'COMPANY_PAGE.CTA_CONTACT' | translate }}</a>
+            <a class="btn btn-ghost" routerLink="/partnership">{{ 'COMPANY_PAGE.CTA_PARTNER' | translate }}</a>
+        </div>
+    </div>
+</section>

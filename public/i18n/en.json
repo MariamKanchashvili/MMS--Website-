@@ -91,6 +91,56 @@
   "CTA_TEXT": "Get in touch and let's discuss how we can work together.",
   "CTA_BTN": "Contact us"
 },
+"COMPANY_PAGE": {
+  "TITLE": "Company",
+  "SUBTITLE": "Modern Medical Solution — a trusted partner in modern medical products.",
+
+  "INTRO_LABEL": "Who we are",
+  "INTRO_TITLE": "Modern medicine, accessible in Georgia",
+  "INTRO_TEXT_1": "Modern Medical Solution is an importer of medical instruments and materials, representing leading international manufacturers on the Georgian market.",
+  "INTRO_TEXT_2": "We work in three main areas — coronary, trauma & orthopedic, and aesthetic medicine. Our goal is to give Georgian doctors and clinics access to the same technologies used by the world's leading medical centers.",
+  "IMAGE_ALT": "Modern Medical Solution",
+
+  "STAT_SUPPLIERS": "International manufacturers",
+  "STAT_PRODUCTS": "Products",
+  "STAT_CLINICS": "Partner clinics",
+  "STAT_YEARS": "Years on the market",
+
+  "VALUES_TITLE": "Our values",
+  "VALUES_TEXT": "The principles that guide our everyday work.",
+  "VALUE_1_TITLE": "Quality",
+  "VALUE_1_TEXT": "We offer only certified products that meet international standards.",
+  "VALUE_2_TITLE": "Reliability",
+  "VALUE_2_TEXT": "Timely delivery and precise fulfilment of agreed terms are the foundation of our partnerships.",
+  "VALUE_3_TITLE": "Support",
+  "VALUE_3_TEXT": "We provide training, consultations and technical assistance to doctors and medical staff.",
+
+  "WHY_TITLE": "Why choose us",
+  "WHY_1_TITLE": "Official distribution",
+  "WHY_1_TEXT": "We source products directly from manufacturers, with no intermediaries.",
+  "WHY_2_TITLE": "Complete documentation",
+  "WHY_2_TEXT": "Every product comes with technical documentation and instructions for use.",
+  "WHY_3_TITLE": "Proper storage conditions",
+  "WHY_3_TEXT": "Products are stored and transported in line with manufacturer requirements.",
+  "WHY_4_TITLE": "Fast delivery",
+  "WHY_4_TEXT": "Flexible logistics across Tbilisi and the regions of Georgia.",
+  "WHY_5_TITLE": "Clinical support",
+  "WHY_5_TEXT": "Our specialists support doctors when introducing new products.",
+  "WHY_6_TITLE": "Individual approach",
+  "WHY_6_TEXT": "We tailor cooperation terms to the needs of each clinic.",
+
+  "CERTS_TITLE": "Quality & certification",
+  "CERTS_TEXT": "Our operations and products comply with Georgian legislation and international standards.",
+  "CERT_1": "Medical product import permit",
+  "CERT_2": "CE-marked products",
+  "CERT_3": "Official distribution agreements with manufacturers",
+  "CERT_4": "ISO 13485 certified manufacturers",
+
+  "CTA_TITLE": "Let's work together",
+  "CTA_TEXT": "Get in touch and let's discuss how we can support your clinic.",
+  "CTA_CONTACT": "Contact",
+  "CTA_PARTNER": "Partnership terms"
+},
 "COMMON": {
   "SCROLL_TOP": "Back to top"
 },
@@ -105,23 +155,23 @@
 },
 "TEAM": {
   "ceo": {
-    "NAME": "Name Surname",
+    "NAME": "Roman Lomidze",
     "ROLE": "Chief Executive Officer"
   },
   "head-sales": {
-    "NAME": "Name Surname",
+    "NAME": "Nino Kurashvili",
     "ROLE": "Head of Sales"
   },
   "m1": {
-    "NAME": "Name Surname",
+    "NAME": "Luka Kiria",
     "ROLE": "Sales Manager · Coronary"
   },
   "m2": {
-    "NAME": "Name Surname",
+    "NAME": "Jumber Sharvadze",
     "ROLE": "Sales Manager · Orthopedics"
   },
   "m3": {
-    "NAME": "Name Surname",
+    "NAME": "Nino Dashniani",
     "ROLE": "Sales Manager · Aesthetic"
   }
 }
