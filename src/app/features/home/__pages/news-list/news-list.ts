@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DatePipe, NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
-import { NEWS } from '../../../data/news';
+import { NEWS } from '../../../../data/news';
 
 @Component({
   imports: [DatePipe, NgOptimizedImage, RouterLink, TranslatePipe],

@@ -6,15 +6,15 @@ export const homeRoutes: Routes = [
     loadComponent: () => import('./home').then(m => m.Home),
   },
   {
+    path: 'news',
+    loadComponent: () => import('./__pages/news-list/news-list').then(m => m.NewsList),
+  },
+  {
     path: 'news/:id',
-    loadComponent: () => import('./news-detail/news-detail').then(m => m.NewsDetail),
+    loadComponent: () => import('./__pages/news-detail/news-detail').then(m => m.NewsDetail),
   },
   {
     path: 'partnership',
-    loadComponent: () => import('./partnership/partnership').then(m => m.Partnership),
+    loadComponent: () => import('./__pages/partnership/partnership').then(m => m.Partnership),
   },
-  {
-  path: 'news',
-  loadComponent: () => import('./news-list/news-list').then(m => m.NewsList),
-},
 ];
