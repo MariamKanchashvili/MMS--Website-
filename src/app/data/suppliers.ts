@@ -1,8 +1,8 @@
 export const SUPPLIERS = [
-  { name: 'Company A', logo: 'images/suppliers/medtronic.png' },
+  { name: 'Company A', logo: 'images/suppliers/medtronic.webp' },
   { name: 'Company B', logo: 'images/suppliers/balt.png' },
-  { name: 'Company C', logo: 'images/suppliers/medacta.png' },
-  { name: 'Company D', logo: 'images/suppliers/company-d.png' },
-  { name: 'Company E', logo: 'images/suppliers/company-e.png' },
-  { name: 'Company F', logo: 'images/suppliers/company-f.png' },
+  { name: 'Company C', logo: 'images/suppliers/medacta.webp' },
+  { name: 'Company D', logo: 'images/suppliers/kanghui.webp' },
+  { name: 'Company E', logo: 'images/suppliers/penumbra.webp' },
+  { name: 'Company F', logo: 'images/suppliers/geister.webp' },
 ];

@@ -14,8 +14,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(90deg, rgba(10, 30, 56, 0.88) 0%, rgba(10, 30, 56, 0.55) 50%, rgba(10, 30, 56, 0.15) 100%);
-    }
+background: linear-gradient(90deg, rgba(10, 30, 56, 0.7) 0%, rgba(10, 30, 56, 0.35) 45%, rgba(10, 30, 56, 0) 75%);    }
 }
 
 .hero-img{
@@ -43,11 +42,13 @@
     > :nth-child(4){ animation-delay: 0.8s; }
 
     h1{
-        font-size: 46px;
-        line-height: 1.2;
-        font-weight: 600;
-        margin-bottom: 22px;
-    }
+    // clamp(მინიმუმი, სასურველი, მაქსიმუმი)
+    font-size: clamp(24px, 5vw + 10px, 46px);
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 22px;
+    overflow-wrap: break-word;   // თუ სიტყვა მაინც არ ეტევა, ახალ ხაზზე გადაიტანოს
+}
 }
 
 .eyebrow{
@@ -68,11 +69,10 @@
         background: $color-logo-gold;
     }
 }
-
 .hero-text{
-    font-size: 17px;
+    font-size: clamp(14px, 1vw + 11px, 17px);
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.8);
+    color: $color-logo-letter;
     margin-bottom: 36px;
 }
 
@@ -93,11 +93,13 @@
 
 .btn-gold{
     background: $color-logo-gold;
-    color: #fff;
+    color: black;
 
     &:hover{
-        background: #fff;
+        background: $color-logo-gold;
         color: $color-logo-blue;
+        text-decoration: underline;
+        font-weight: 100;
     }
 }
 
@@ -291,7 +293,7 @@
     right: 0;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    // gap: 3px;
 
     span{
         display: block;
@@ -342,13 +344,15 @@
 }
 
 @media screen and (max-width: 600px){
-    .hero-content h1{ font-size: 32px; }
-    .hero-text{ font-size: 15px; }
+   
 
     .news-card{ grid-template-columns: 1fr; }
     .news-img{ min-height: 200px; }
 
     .logo{ margin: 0 16px; }
+     .hero::after{
+        background: rgba(10, 30, 56, 0.6);   // მთელ ფოტოზე თანაბრად
+    }
 }
 
 @media (prefers-reduced-motion: reduce){
