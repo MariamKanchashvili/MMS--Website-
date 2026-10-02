@@ -1,178 +1,234 @@
 {
-    "NAV": {
+  "NAV": {
     "HOME": "Home",
     "COMPANY": "Company",
-     "NEWS":"News",
+    "NEWS": "News",
     "PRODUCTS": "Products",
     "CONTACT": "Contact",
     "PARTNERSHIP": "Partnership"
-    
   },
   "LANG": {
     "GE": "GE",
     "EN": "EN"
   },
   "FOOTER": {
-  "ABOUT": "Importer of medical instruments and materials, partnering with leading international manufacturers.",
-  "DIRECTIONS": "Directions",
-  "CORONARY": "Coronary",
-  "ORTHOPEDICS": "Traumatology & Orthopedics",
-  "AESTHETICS": "Aesthetics",
-  "NAVIGATION": "Navigation",
-  "CONTACT": "Contact",
-  "ADDRESS": "Address",
-  "ADDRESS_VALUE": "Tbilisi, Univercity street N 38b",
-  "PHONE": "Phone",
-  "EMAIL": "Email",
-  "HOURS": "Working hours",
-  "HOURS_VALUE": "Mon–Fri, 09:30–17:30",
-  "RIGHTS": "All rights reserved",
-  "DISCLAIMER": "The information on this website is intended for healthcare professionals and does not constitute medical advice."
-},
-"HOME": {
-  "TITLE": "Modern medical solutions in Georgia",
-  "TEXT": "Medical instruments and materials from leading international manufacturers in coronary, trauma & orthopedic and aesthetic medicine.",
-  "CONTACT_US": "Contact us",
-  "SUPPLIERS": "Our suppliers",
-  "LATEST_NEWS": "Latest news",
-  "READ_MORE": "Read more",
-  "PARTNERSHIP": "Partnership",
-  "PARTNER_TITLE": "Would you like to become our partner?",
-  "PARTNER_TEXT": "We work with clinics, healthcare institutions and manufacturers. Learn about our partnership terms.",
-  "PARTNER_BTN": "Partnership terms",
-  "ALL_NEWS":"All news"
-},
-"NEWS_PAGE": {
-  "TITLE": "News",
-  "SUBTITLE": "Company news, new products and events.",
-  "ALL": "All news",
-  "OTHER": "More news",
-  "EMPTY": "No news yet.",
-  "NOT_FOUND": "News not found"
-},
-"NEWS": {
-  "n1": {
-    "TITLE": "Advances in Neurosurgery",
-    "SHORT": "World-class neurosurgery is now available in Georgia!",
-    "TEXT": "At Jo Ann University Hospital, neurosurgical procedures are performed using the Medtronic O-ARM 2 imaging system and the StealthStation S8 neuronavigation system!\nTreatment uses some of the world's leading implants: the CD Horizon Solera Voyager, Artic-L and Clydesdale minimally invasive systems!\n\nThe technology enables the surgeon to work with high precision using a minimally invasive approach, significantly reducing operating time and blood loss, while postoperative pain and the risk of complications are virtually eliminated. Patients are discharged within 48–72 hours!\n\nHead of department: neurosurgeon Giorgi Gegia.\n📞 To book a consultation: 596 22 22 90\n✉️ HEALTH@JOANN.GE\n🌐 www.joann.ge"
+    "ABOUT": "Importer of medical instruments and materials, partnering with leading international manufacturers.",
+    "DIRECTIONS": "Directions",
+    "CORONARY": "Coronary",
+    "ORTHOPEDICS": "Traumatology & Neurosurgery",
+    "AESTHETICS": "Aesthetics",
+    "NAVIGATION": "Navigation",
+    "CONTACT": "Contact",
+    "ADDRESS": "Address",
+    "ADDRESS_VALUE": "Tbilisi, Univercity street N 38b",
+    "PHONE": "Phone",
+    "EMAIL": "Email",
+    "HOURS": "Working hours",
+    "HOURS_VALUE": "Mon–Fri, 09:30–17:30",
+    "RIGHTS": "All rights reserved",
+    "DISCLAIMER": "The information on this website is intended for healthcare professionals and does not constitute medical advice."
+  },
+  "HOME": {
+    "TITLE": "Modern medical solutions in Georgia",
+    "TEXT": "Medical instruments and materials from leading international manufacturers in coronary, trauma & orthopedic and aesthetic medicine.",
+    "CONTACT_US": "Contact us",
+    "SUPPLIERS": "Our suppliers",
+    "LATEST_NEWS": "Latest news",
+    "READ_MORE": "Read more",
+    "PARTNERSHIP": "Partnership",
+    "PARTNER_TITLE": "Would you like to become our partner?",
+    "PARTNER_TEXT": "We work with clinics, healthcare institutions and manufacturers. Learn about our partnership terms.",
+    "PARTNER_BTN": "Partnership terms",
+    "ALL_NEWS": "All news"
+  },
+  "NEWS_PAGE": {
+    "TITLE": "News",
+    "SUBTITLE": "Company news, new products and events.",
+    "ALL": "All news",
+    "OTHER": "More news",
+    "EMPTY": "No news yet.",
+    "NOT_FOUND": "News not found"
+  },
+  "NEWS": {
+    "n1": {
+      "TITLE": "Advances in Neurosurgery",
+      "SHORT": "World-class neurosurgery is now available in Georgia!",
+      "TEXT": "At Jo Ann University Hospital, neurosurgical procedures are performed using the Medtronic O-ARM 2 imaging system and the StealthStation S8 neuronavigation system!\nTreatment uses some of the world's leading implants: the CD Horizon Solera Voyager, Artic-L and Clydesdale minimally invasive systems!\n\nThe technology enables the surgeon to work with high precision using a minimally invasive approach, significantly reducing operating time and blood loss, while postoperative pain and the risk of complications are virtually eliminated. Patients are discharged within 48–72 hours!\n\nHead of department: neurosurgeon Giorgi Gegia.\n📞 To book a consultation: 596 22 22 90\n✉️ HEALTH@JOANN.GE\n🌐 www.joann.ge"
+    }
+  },
+  "PARTNERSHIP_PAGE": {
+    "TITLE": "Partnership",
+    "SUBTITLE": "We build long-term relationships that serve quality healthcare.",
+    "INTRO": "Modern Medical Solution is open to cooperation with healthcare institutions, manufacturers and distributors. Our goal is to make modern, certified medical products accessible in Georgia.",
+    "WHO_TITLE": "Who we work with",
+    "WHO_1": "Clinics and healthcare institutions",
+    "WHO_2": "International manufacturers seeking representation in Georgia",
+    "WHO_3": "Regional distributors and pharmacy chains",
+    "OFFER_TITLE": "What we offer",
+    "OFFER_1": "Officially registered and certified products",
+    "OFFER_2": "Complete technical documentation and instructions for use",
+    "OFFER_3": "Product training and consultations for medical staff",
+    "OFFER_4": "Flexible delivery and individual terms",
+    "TERMS_TITLE": "Terms of cooperation",
+    "TERM_1": "The partner must be a registered legal entity",
+    "TERM_2": "For healthcare institutions, a valid license or permit",
+    "TERM_3": "Specific terms are agreed individually, based on a contract",
+    "STEPS_TITLE": "How to get started",
+    "STEP_1_TITLE": "Contact us",
+    "STEP_1_TEXT": "Write or call us and briefly tell us about your organization.",
+    "STEP_2_TITLE": "Get acquainted",
+    "STEP_2_TEXT": "We'll meet to discuss your needs and the cooperation format.",
+    "STEP_3_TITLE": "Agreement",
+    "STEP_3_TEXT": "We'll agree on terms and sign a partnership agreement.",
+    "IMAGE_ALT": "Partnership",
+    "CTA_TITLE": "Interested in working with us?",
+    "CTA_TEXT": "Get in touch and let's discuss how we can work together.",
+    "CTA_BTN": "Contact us"
+  },
+  "COMPANY_PAGE": {
+    "TITLE": "Company",
+    "SUBTITLE": "Modern Medical Solution — a trusted partner in modern medical products.",
+    "INTRO_LABEL": "Who we are",
+    "INTRO_TITLE": "Modern medicine, accessible in Georgia",
+    "INTRO_TEXT_1": "Modern Medical Solution is an importer of medical instruments and materials, representing leading international manufacturers on the Georgian market.",
+    "INTRO_TEXT_2": "We work in three main areas — coronary, trauma & orthopedic, and aesthetic medicine. Our goal is to give Georgian doctors and clinics access to the same technologies used by the world's leading medical centers.",
+    "IMAGE_ALT": "Modern Medical Solution",
+    "STAT_SUPPLIERS": "International manufacturers",
+    "STAT_PRODUCTS": "Products",
+    "STAT_CLINICS": "Partner clinics",
+    "STAT_YEARS": "Years on the market",
+    "VALUES_TITLE": "Our values",
+    "VALUES_TEXT": "The principles that guide our everyday work.",
+    "VALUE_1_TITLE": "Quality",
+    "VALUE_1_TEXT": "We offer only certified products that meet international standards.",
+    "VALUE_2_TITLE": "Reliability",
+    "VALUE_2_TEXT": "Timely delivery and precise fulfilment of agreed terms are the foundation of our partnerships.",
+    "VALUE_3_TITLE": "Support",
+    "VALUE_3_TEXT": "We provide training, consultations and technical assistance to doctors and medical staff.",
+    "WHY_TITLE": "Why choose us",
+    "WHY_1_TITLE": "Official distribution",
+    "WHY_1_TEXT": "We source products directly from manufacturers, with no intermediaries.",
+    "WHY_2_TITLE": "Complete documentation",
+    "WHY_2_TEXT": "Every product comes with technical documentation and instructions for use.",
+    "WHY_3_TITLE": "Proper storage conditions",
+    "WHY_3_TEXT": "Products are stored and transported in line with manufacturer requirements.",
+    "WHY_4_TITLE": "Fast delivery",
+    "WHY_4_TEXT": "Flexible logistics across Tbilisi and the regions of Georgia.",
+    "WHY_5_TITLE": "Clinical support",
+    "WHY_5_TEXT": "Our specialists support doctors when introducing new products.",
+    "WHY_6_TITLE": "Individual approach",
+    "WHY_6_TEXT": "We tailor cooperation terms to the needs of each clinic.",
+    "CERTS_TITLE": "Quality & certification",
+    "CERTS_TEXT": "Our operations and products comply with Georgian legislation and international standards.",
+    "CERT_1": "Medical product import permit",
+    "CERT_2": "CE-marked products",
+    "CERT_3": "Official distribution agreements with manufacturers",
+    "CERT_4": "ISO 13485 certified manufacturers",
+    "CTA_TITLE": "Let's work together",
+    "CTA_TEXT": "Get in touch and let's discuss how we can support your clinic.",
+    "CTA_CONTACT": "Contact",
+    "CTA_PARTNER": "Partnership terms"
+  },
+  "COMMON": {
+    "SCROLL_TOP": "Back to top"
+  },
+  "CONTACT_PAGE": {
+    "TITLE": "Contact",
+    "SUBTITLE": "Get in touch with any question about our products, delivery or partnership.",
+    "TEAM_TITLE": "Contact persons",
+    "TEAM_TEXT": "Reach the manager responsible for your area directly.",
+    "MAP_TITLE": "Office location on the map",
+    "PARTNER_TITLE": "Interested in partnership?",
+    "PARTNER_TEXT": "Learn about our partnership terms"
+  },
+  "TEAM": {
+    "ceo": {
+      "NAME": "Roman Lomidze",
+      "ROLE": "Chief Executive Officer"
+    },
+    "head-sales": {
+      "NAME": "Nino Kurashvili",
+      "ROLE": "Head of Sales"
+    },
+    "m1": {
+      "NAME": "Luka Kiria",
+      "ROLE": "Sales Manager · Coronary"
+    },
+    "m2": {
+      "NAME": "Jumber Sharvadze",
+      "ROLE": "Sales Manager · Orthopedics"
+    },
+    "m3": {
+      "NAME": "Nino Dashniani",
+      "ROLE": "Sales Manager · Aesthetic"
+    }
+  },
+  "PRODUCTS": {
+    "TITLE": "Products",
+    "SUBTITLE": "Medical instruments, materials and equipment from leading international manufacturers.",
+    "ALL": "All",
+    "SEARCH": "Search: name, category, manufacturer...",
+    "MANUFACTURER": "Manufacturer",
+    "ALL_MANUFACTURERS": "All manufacturers",
+    "RESULTS": "Found: {{count}}",
+    "RESET": "Clear filters",
+    "EMPTY": "No products match this filter.",
+    "PAGES": "Pages",
+    "DETAILS": "Details",
+    "FEATURES": "Features",
+    "SIZES_TITLE": "Sizes",
+    "SIZES_NOTE": "Contact us for the full size matrix.",
+    "CONTACT_TITLE": "Interested in this product?",
+    "CONTACT_TEXT": "Call us, or visit our contact page to choose the manager responsible for your area and reach them directly. They will help you confirm sizes, availability and delivery terms.",
+"CONTACT_BTN": "Choose a manager",
+    "RELATED": "Related products",
+    "NOT_FOUND": "Product not found",
+    "BACK": "All products",
+    "DIRECTIONS": {
+      "coronary": "Coronary",
+      "orthopedics": "Orthopedics",
+      "aesthetics": "Aesthetics",
+      "equipment": "Equipment",
+      "implants": "Implants"
+    },
+    "GROUPS": {
+      "hip": "Hip",
+      "spine": "Spine"
+    },
+    "CATEGORIES": {
+      "balloon": "Balloon catheters",
+      "stent": "Stents",
+      "valve": "Bioprosthetic valves",
+      "guidewire": "Guidewires",
+      "oxygenator": "Oxygenators",
+      "introducer": "Introducers",
+      "shunt": "Shunts",
+      "cup": "Acetabular cups",
+      "liner": "Liners",
+      "stem": "Femoral stems",
+      "cement": "Bone cement",
+      "prosthesis": "Prostheses",
+      "screw": "Screws",
+      "cage": "Cages",
+      "face-filler": "Face fillers",
+      "body-filler": "Body fillers"
+    },
+    "SIZES": {
+      "diameter": "Diameter",
+      "length": "Length",
+      "width": "Width",
+      "volume": "Volume"
+    },
+    "DOCS": {
+      "ifu": "Instructions for use (PDF)",
+      "brochure": "Brochure (PDF)",
+      "certificate": "Certificate (PDF)"
+    }
+  },
+  "PRODUCT": {
+    "onyx-trucor": {
+      "DESCRIPTION": "Onyx Trucor is a Medtronic drug-eluting coronary stent used in the interventional treatment of coronary artery disease.",
+      "FEATURES": "Drug-eluting coronary stent (DES)\nDiameter: 2.25–5.0 mm\nLength: 8–38 mm"
+    }
   }
-},
-"PARTNERSHIP_PAGE": {
-  "TITLE": "Partnership",
-  "SUBTITLE": "We build long-term relationships that serve quality healthcare.",
-  "INTRO": "Modern Medical Solution is open to cooperation with healthcare institutions, manufacturers and distributors. Our goal is to make modern, certified medical products accessible in Georgia.",
-
-  "WHO_TITLE": "Who we work with",
-  "WHO_1": "Clinics and healthcare institutions",
-  "WHO_2": "International manufacturers seeking representation in Georgia",
-  "WHO_3": "Regional distributors and pharmacy chains",
-
-  "OFFER_TITLE": "What we offer",
-  "OFFER_1": "Officially registered and certified products",
-  "OFFER_2": "Complete technical documentation and instructions for use",
-  "OFFER_3": "Product training and consultations for medical staff",
-  "OFFER_4": "Flexible delivery and individual terms",
-
-  "TERMS_TITLE": "Terms of cooperation",
-  "TERM_1": "The partner must be a registered legal entity",
-  "TERM_2": "For healthcare institutions, a valid license or permit",
-  "TERM_3": "Specific terms are agreed individually, based on a contract",
-
-  "STEPS_TITLE": "How to get started",
-  "STEP_1_TITLE": "Contact us",
-  "STEP_1_TEXT": "Write or call us and briefly tell us about your organization.",
-  "STEP_2_TITLE": "Get acquainted",
-  "STEP_2_TEXT": "We'll meet to discuss your needs and the cooperation format.",
-  "STEP_3_TITLE": "Agreement",
-  "STEP_3_TEXT": "We'll agree on terms and sign a partnership agreement.",
-
-  "IMAGE_ALT": "Partnership",
-  "CTA_TITLE": "Interested in working with us?",
-  "CTA_TEXT": "Get in touch and let's discuss how we can work together.",
-  "CTA_BTN": "Contact us"
-},
-"COMPANY_PAGE": {
-  "TITLE": "Company",
-  "SUBTITLE": "Modern Medical Solution — a trusted partner in modern medical products.",
-
-  "INTRO_LABEL": "Who we are",
-  "INTRO_TITLE": "Modern medicine, accessible in Georgia",
-  "INTRO_TEXT_1": "Modern Medical Solution is an importer of medical instruments and materials, representing leading international manufacturers on the Georgian market.",
-  "INTRO_TEXT_2": "We work in three main areas — coronary, trauma & orthopedic, and aesthetic medicine. Our goal is to give Georgian doctors and clinics access to the same technologies used by the world's leading medical centers.",
-  "IMAGE_ALT": "Modern Medical Solution",
-
-  "STAT_SUPPLIERS": "International manufacturers",
-  "STAT_PRODUCTS": "Products",
-  "STAT_CLINICS": "Partner clinics",
-  "STAT_YEARS": "Years on the market",
-
-  "VALUES_TITLE": "Our values",
-  "VALUES_TEXT": "The principles that guide our everyday work.",
-  "VALUE_1_TITLE": "Quality",
-  "VALUE_1_TEXT": "We offer only certified products that meet international standards.",
-  "VALUE_2_TITLE": "Reliability",
-  "VALUE_2_TEXT": "Timely delivery and precise fulfilment of agreed terms are the foundation of our partnerships.",
-  "VALUE_3_TITLE": "Support",
-  "VALUE_3_TEXT": "We provide training, consultations and technical assistance to doctors and medical staff.",
-
-  "WHY_TITLE": "Why choose us",
-  "WHY_1_TITLE": "Official distribution",
-  "WHY_1_TEXT": "We source products directly from manufacturers, with no intermediaries.",
-  "WHY_2_TITLE": "Complete documentation",
-  "WHY_2_TEXT": "Every product comes with technical documentation and instructions for use.",
-  "WHY_3_TITLE": "Proper storage conditions",
-  "WHY_3_TEXT": "Products are stored and transported in line with manufacturer requirements.",
-  "WHY_4_TITLE": "Fast delivery",
-  "WHY_4_TEXT": "Flexible logistics across Tbilisi and the regions of Georgia.",
-  "WHY_5_TITLE": "Clinical support",
-  "WHY_5_TEXT": "Our specialists support doctors when introducing new products.",
-  "WHY_6_TITLE": "Individual approach",
-  "WHY_6_TEXT": "We tailor cooperation terms to the needs of each clinic.",
-
-  "CERTS_TITLE": "Quality & certification",
-  "CERTS_TEXT": "Our operations and products comply with Georgian legislation and international standards.",
-  "CERT_1": "Medical product import permit",
-  "CERT_2": "CE-marked products",
-  "CERT_3": "Official distribution agreements with manufacturers",
-  "CERT_4": "ISO 13485 certified manufacturers",
-
-  "CTA_TITLE": "Let's work together",
-  "CTA_TEXT": "Get in touch and let's discuss how we can support your clinic.",
-  "CTA_CONTACT": "Contact",
-  "CTA_PARTNER": "Partnership terms"
-},
-"COMMON": {
-  "SCROLL_TOP": "Back to top"
-},
-"CONTACT_PAGE": {
-  "TITLE": "Contact",
-  "SUBTITLE": "Get in touch with any question about our products, delivery or partnership.",
-  "TEAM_TITLE": "Contact persons",
-  "TEAM_TEXT": "Reach the manager responsible for your area directly.",
-  "MAP_TITLE": "Office location on the map",
-  "PARTNER_TITLE": "Interested in partnership?",
-  "PARTNER_TEXT": "Learn about our partnership terms"
-},
-"TEAM": {
-  "ceo": {
-    "NAME": "Roman Lomidze",
-    "ROLE": "Chief Executive Officer"
-  },
-  "head-sales": {
-    "NAME": "Nino Kurashvili",
-    "ROLE": "Head of Sales"
-  },
-  "m1": {
-    "NAME": "Luka Kiria",
-    "ROLE": "Sales Manager · Coronary"
-  },
-  "m2": {
-    "NAME": "Jumber Sharvadze",
-    "ROLE": "Sales Manager · Orthopedics"
-  },
-  "m3": {
-    "NAME": "Nino Dashniani",
-    "ROLE": "Sales Manager · Aesthetic"
-  }
-}
 }

@@ -23,9 +23,9 @@
         <div>
             <h3>{{ 'FOOTER.DIRECTIONS' | translate }}</h3>
             <ul>
-                <li><a routerLink="/products">{{ 'FOOTER.CORONARY' | translate }}</a></li>
-                <li><a routerLink="/products">{{ 'FOOTER.ORTHOPEDICS' | translate }}</a></li>
-                <li><a routerLink="/products">{{ 'FOOTER.AESTHETICS' | translate }}</a></li>
+                <li><a routerLink="/products" [queryParams]="{ direction: 'coronary' }">{{ 'FOOTER.CORONARY' | translate }}</a></li>
+                <li><a routerLink="/products" [queryParams]="{ direction: 'orthopedics' }">{{ 'FOOTER.ORTHOPEDICS' | translate }}</a></li>
+                <li><a routerLink="/products" [queryParams]="{ direction: 'aesthetics' }">{{ 'FOOTER.AESTHETICS' | translate }}</a></li>
             </ul>
         </div>
 

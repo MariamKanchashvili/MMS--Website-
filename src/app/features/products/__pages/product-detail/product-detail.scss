@@ -1,0 +1,387 @@
+@use 'shared_variables' as *;
+
+.detail{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+}
+
+// ===== 1. Breadcrumb =====
+.breadcrumb{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    font-size: 13px;
+    color: #8a94a3;
+
+    a{
+        color: #5b6778;
+        transition: color 0.2s;
+
+        &:hover{ color: $color-logo-gold; }
+    }
+}
+
+// ===== ზედა ნაწილი: ფოტო + ინფორმაცია =====
+.detail-top{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+    margin-bottom: 56px;
+}
+
+// ===== 2. ფოტოები =====
+.gallery{
+    animation: fadeUp 0.6s ease-out both;
+}
+
+.main-image{
+    position: relative;      // fill-ისთვის
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    background: #f7f9fb;
+    border: 1px solid #eef1f5;
+    border-radius: 4px;
+    overflow: hidden;
+
+    img{
+        object-fit: contain;
+        padding: 32px;
+    }
+}
+
+.placeholder{
+    width: 80px;
+    height: 80px;
+    color: #c5cdd8;
+}
+
+.thumbs{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.thumb{
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: #f7f9fb;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s;
+
+    img{
+        object-fit: contain;
+        padding: 6px;
+    }
+
+    &:hover{ border-color: #dfe5ec; }
+
+    &--active{ border-color: $color-logo-gold; }
+}
+
+// ===== 3. ინფორმაცია =====
+.info{
+    animation: fadeUp 0.6s ease-out 0.1s both;
+
+    h1{
+        font-size: clamp(28px, 2vw + 18px, 38px);
+        font-weight: 600;
+        line-height: 1.2;
+        color: $color-logo-blue;
+        margin-bottom: 10px;
+    }
+
+    h2{
+        font-size: 16px;
+        font-weight: 600;
+        color: $color-logo-blue;
+        margin: 28px 0 14px;
+    }
+}
+
+.meta{
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $color-logo-gold;
+    margin-bottom: 12px;
+}
+
+.manufacturer{
+    font-size: 15px;
+    color: $color-logo-blue;
+    margin-bottom: 24px;
+
+    span{ color: #8a94a3; }
+}
+
+.description{
+    line-height: 1.8;
+    color: #4a5566;
+    white-space: pre-line;   // JSON-ში \n ახალ ხაზად გამოჩნდება
+}
+
+.features{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li{
+        position: relative;
+        padding-left: 30px;
+        line-height: 1.6;
+        color: #4a5566;
+
+        &::before{
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 1px;
+            width: 20px;
+            height: 20px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: $color-logo-gold;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+        }
+    }
+}
+
+.documents{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.doc{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid #dfe5ec;
+    border-radius: 4px;
+    font-size: 14px;
+    color: $color-logo-blue;
+    transition: border-color 0.2s;
+
+    svg{
+        width: 18px;
+        height: 18px;
+        color: $color-logo-gold;
+    }
+
+    &:hover{ border-color: $color-logo-gold; }
+}
+
+// ===== 4. ზომები =====
+.sizes{
+    margin-bottom: 40px;
+
+    h2{
+        font-size: 22px;
+        font-weight: 600;
+        color: $color-logo-blue;
+        margin-bottom: 18px;
+    }
+
+    table{
+        width: 100%;
+        max-width: 640px;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 4px 18px rgba(14, 42, 77, 0.07);
+    }
+
+    th, td{
+        padding: 14px 20px;
+        text-align: left;
+        border-bottom: 1px solid #eef1f5;
+    }
+
+    tr:last-child th,
+    tr:last-child td{ border-bottom: none; }
+
+    th{
+        width: 45%;
+        font-weight: 500;
+        color: #5b6778;
+        background: #f7f9fb;
+    }
+
+    td{
+        font-weight: 600;
+        color: $color-logo-blue;
+    }
+}
+
+.note{
+    margin-top: 12px;
+    font-size: 13px;
+    color: #8a94a3;
+}
+
+// ===== 5. დაკავშირება =====
+.contact-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+    padding: 36px 32px;
+    background: $color-logo-blue;
+    color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+
+    h2{
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    p{
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.75);
+    }
+}
+
+.stripes{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    span{
+        display: block;
+        background: $color-logo-gold;
+
+        &:nth-child(1){ height: 4px; }
+        &:nth-child(2){ height: 2px; opacity: 0.7; }
+        &:nth-child(3){ height: 1px; opacity: 0.4; }
+    }
+}
+
+.contact-actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.btn{
+    display: inline-block;
+    padding: 13px 24px;
+    font-size: 14px;
+    border-radius: 3px;
+    white-space: nowrap;
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.btn-gold{
+    background: $color-logo-gold;
+    color: #fff;
+
+    &:hover{
+        background: #fff;
+        color: $color-logo-blue;
+    }
+}
+
+.btn-ghost{
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: #fff;
+
+    &:hover{
+        border-color: $color-logo-gold;
+        color: $color-logo-gold;
+    }
+}
+
+// ===== 6. მსგავსი პროდუქტები =====
+.related{
+    background: #eef1f5;
+}
+
+.related-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 20px 80px;
+
+    h2{
+        font-size: 24px;
+        font-weight: 600;
+        color: $color-logo-blue;
+        margin-bottom: 32px;
+
+        &::after{
+            content: '';
+            display: block;
+            width: 36px;
+            height: 2px;
+            background: $color-logo-gold;
+            margin-top: 12px;
+        }
+    }
+}
+
+.related-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+// ===== ვერ მოიძებნა =====
+.not-found{
+    padding: 120px 20px;
+    text-align: center;
+
+    h1{
+        font-size: 24px;
+        color: $color-logo-blue;
+        margin-bottom: 20px;
+    }
+
+    a{ color: $color-logo-gold; }
+}
+
+@keyframes fadeUp{
+    from{ opacity: 0; transform: translateY(20px); }
+    to{ opacity: 1; transform: translateY(0); }
+}
+
+// ===== რესპონსივი =====
+@media screen and (max-width: 900px){
+    .detail-top{
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .main-image{ aspect-ratio: 4 / 3; }
+
+    .contact-box{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .gallery, .info{ animation: none; }
+}

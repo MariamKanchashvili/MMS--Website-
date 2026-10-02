@@ -1,1 +1,135 @@
-<p>products works!</p>
+<!-- ===== 1. სათაურის ზოლი ===== -->
+<section class="page-head">
+    <div class="page-head-inner">
+        <p class="eyebrow">Modern Medical Solution</p>
+        <h1>{{ 'PRODUCTS.TITLE' | translate }}</h1>
+        <p class="subtitle">{{ 'PRODUCTS.SUBTITLE' | translate }}</p>
+    </div>
+    <div class="ribbon"><span></span><span></span><span></span></div>
+</section>
+
+
+<section class="catalog">
+
+    <!-- ===== 2. მიმართულების ჩანართები ===== -->
+    <div class="tabs" role="tablist">
+        <button type="button" class="tab"
+                [class.tab--active]="!direction()"
+                (click)="setDirection(null)">
+            {{ 'PRODUCTS.ALL' | translate }}
+        </button>
+
+        @for (d of directions; track d) {
+            <button type="button" class="tab"
+                    [class.tab--active]="direction() === d"
+                    (click)="setDirection(d)">
+                {{ ('PRODUCTS.DIRECTIONS.' + d) | translate }}
+            </button>
+        }
+    </div>
+
+
+    <!-- ===== 3. კატეგორიები: მხოლოდ მაშინ, როცა მიმართულება არჩეულია ===== -->
+    @if (categories().length) {
+        <div class="categories">
+
+            <!-- კატეგორიები ქვეჯგუფის გარეშე -->
+            @if (ungrouped().length) {
+                <div class="chip-row">
+                    @for (c of ungrouped(); track c.id) {
+                        <button type="button" class="chip"
+                                [class.chip--active]="category() === c.id"
+                                (click)="setCategory(c.id)">
+                            {{ ('PRODUCTS.CATEGORIES.' + c.id) | translate }}
+                        </button>
+                    }
+                </div>
+            }
+
+            <!-- ქვეჯგუფები: სათაური + მისი კატეგორიები -->
+            @for (g of groups(); track g) {
+                <div class="chip-row">
+                    <span class="group-label">{{ ('PRODUCTS.GROUPS.' + g) | translate }}</span>
+                    @for (c of categoriesOf(g); track c.id) {
+                        <button type="button" class="chip"
+                                [class.chip--active]="category() === c.id"
+                                (click)="setCategory(c.id)">
+                            {{ ('PRODUCTS.CATEGORIES.' + c.id) | translate }}
+                        </button>
+                    }
+                </div>
+            }
+        </div>
+    }
+
+
+    <!-- ===== 4. ძებნა + მწარმოებელი ===== -->
+    <div class="toolbar">
+        <label class="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="11" cy="11" r="7"/>
+                <path d="m20 20-3.5-3.5"/>
+            </svg>
+            <!-- #searchInput: სახელი, რომ (input)-ში მისი ტექსტი ავიღოთ -->
+            <input #searchInput type="search"
+                   [value]="q() ?? ''"
+                   [placeholder]="'PRODUCTS.SEARCH' | translate"
+                   (input)="setSearch(searchInput.value)">
+        </label>
+
+        <select #manufacturerSelect class="select"
+                [attr.aria-label]="'PRODUCTS.MANUFACTURER' | translate"
+                (change)="setManufacturer(manufacturerSelect.value)">
+            <option value="">{{ 'PRODUCTS.ALL_MANUFACTURERS' | translate }}</option>
+            @for (m of manufacturers; track m.id) {
+                <option [value]="m.id" [selected]="manufacturer() === m.id">{{ m.name }}</option>
+            }
+        </select>
+    </div>
+
+
+    <!-- ===== 5. შედეგების რაოდენობა ===== -->
+    <div class="results-bar">
+        <p>{{ 'PRODUCTS.RESULTS' | translate: { count: filtered().length } }}</p>
+        @if (hasFilters()) {
+            <button type="button" class="reset" (click)="reset()">
+                {{ 'PRODUCTS.RESET' | translate }} ✕
+            </button>
+        }
+    </div>
+
+
+    <!-- ===== 6. პროდუქტები ===== -->
+    @if (pageItems().length) {
+        <div class="grid">
+            @for (p of pageItems(); track p.id) {
+                <app-product-card [product]="p" />
+            }
+        </div>
+    } @else {
+        <div class="empty">
+            <p>{{ 'PRODUCTS.EMPTY' | translate }}</p>
+            <button type="button" class="reset" (click)="reset()">{{ 'PRODUCTS.RESET' | translate }}</button>
+        </div>
+    }
+
+
+    <!-- ===== 7. გვერდები: მხოლოდ თუ 1-ზე მეტია ===== -->
+    @if (totalPages() > 1) {
+        <nav class="pagination" [attr.aria-label]="'PRODUCTS.PAGES' | translate">
+            <button type="button" class="page-btn"
+                    [disabled]="currentPage() === 1"
+                    (click)="goToPage(currentPage() - 1)">←</button>
+
+            @for (n of pages(); track n) {
+                <button type="button" class="page-btn"
+                        [class.page-btn--active]="n === currentPage()"
+                        (click)="goToPage(n)">{{ n }}</button>
+            }
+
+            <button type="button" class="page-btn"
+                    [disabled]="currentPage() === totalPages()"
+                    (click)="goToPage(currentPage() + 1)">→</button>
+        </nav>
+    }
+</section>

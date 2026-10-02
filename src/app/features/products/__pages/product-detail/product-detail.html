@@ -1,0 +1,150 @@
+@if (product(); as p) {
+
+    <section class="detail">
+
+        <!-- ===== 1. ნავიგაციის ხაზი (breadcrumb) ===== -->
+        <nav class="breadcrumb">
+            <a routerLink="/products">{{ 'PRODUCTS.TITLE' | translate }}</a>
+            <span>›</span>
+            <a routerLink="/products" [queryParams]="{ direction: p.direction }">
+                {{ ('PRODUCTS.DIRECTIONS.' + p.direction) | translate }}
+            </a>
+            <span>›</span>
+            <a routerLink="/products" [queryParams]="{ direction: p.direction, category: p.category }">
+                {{ ('PRODUCTS.CATEGORIES.' + p.category) | translate }}
+            </a>
+        </nav>
+
+
+        <div class="detail-top">
+
+            <!-- ===== 2. ფოტოები ===== -->
+            <div class="gallery">
+                <div class="main-image">
+                    @if (images().length) {
+                        <img [ngSrc]="images()[selectedImage()]" fill priority [alt]="p.name">
+                    } @else {
+                        <svg class="placeholder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <circle cx="9" cy="9" r="2"/>
+                            <path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/>
+                        </svg>
+                    }
+                </div>
+
+                <!-- პატარა ფოტოები: მხოლოდ თუ 1-ზე მეტია -->
+                @if (images().length > 1) {
+                    <div class="thumbs">
+                        @for (img of images(); track img; let i = $index) {
+                            <button type="button" class="thumb"
+                                    [class.thumb--active]="i === selectedImage()"
+                                    (click)="selectedImage.set(i)">
+                                <img [ngSrc]="img" fill alt="">
+                            </button>
+                        }
+                    </div>
+                }
+            </div>
+
+
+            <!-- ===== 3. ინფორმაცია ===== -->
+            <div class="info">
+                <p class="meta">
+                    {{ ('PRODUCTS.DIRECTIONS.' + p.direction) | translate }}
+                    ·
+                    {{ ('PRODUCTS.CATEGORIES.' + p.category) | translate }}
+                </p>
+
+                <h1>{{ p.name }}</h1>
+
+                @if (manufacturer(); as m) {
+                    <p class="manufacturer">
+                        <span>{{ 'PRODUCTS.MANUFACTURER' | translate }}:</span> {{ m.name }}
+                    </p>
+                }
+
+                <p class="description">{{ ('PRODUCT.' + p.id + '.DESCRIPTION') | translate }}</p>
+
+                <!-- მახასიათებლები: JSON-ში \n-ით გამოყოფილი ხაზები -->
+                <h2>{{ 'PRODUCTS.FEATURES' | translate }}</h2>
+                <ul class="features">
+                    @for (line of toLines(('PRODUCT.' + p.id + '.FEATURES') | translate); track $index) {
+                        <li>{{ line }}</li>
+                    }
+                </ul>
+
+                <!-- დოკუმენტები: მხოლოდ თუ არსებობს -->
+                @if (p.documents?.length) {
+                    <div class="documents">
+                        @for (doc of p.documents; track doc.file) {
+                            <a class="doc" [href]="doc.file" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+                                    <path d="M14 3v6h6"/>
+                                    <path d="M12 12v6"/>
+                                    <path d="m9 15 3 3 3-3"/>
+                                </svg>
+                                {{ ('PRODUCTS.DOCS.' + doc.type) | translate }}
+                            </a>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+
+
+        <!-- ===== 4. ზომები ===== -->
+        <div class="sizes">
+            <h2>{{ 'PRODUCTS.SIZES_TITLE' | translate }}</h2>
+            <table>
+                <tbody>
+                    @for (s of p.sizes; track s.param) {
+                        <tr>
+                            <th>{{ ('PRODUCTS.SIZES.' + s.param) | translate }}</th>
+                            <td>{{ s.range }} {{ s.unit }}</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p class="note">{{ 'PRODUCTS.SIZES_NOTE' | translate }}</p>
+        </div>
+
+
+        <!-- ===== 5. დაკავშირება ===== -->
+        <div class="contact-box">
+            <div class="stripes"><span></span><span></span><span></span></div>
+            <div>
+                <h2>{{ 'PRODUCTS.CONTACT_TITLE' | translate }}</h2>
+                <p>{{ 'PRODUCTS.CONTACT_TEXT' | translate }}</p>
+            </div>
+            <div class="contact-actions">
+                <a class="btn btn-gold" [href]="contact.phoneLink">{{ contact.phone }}</a>
+                <a class="btn btn-ghost" routerLink="/contact">{{ 'PRODUCTS.CONTACT_BTN' | translate }}</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== 6. მსგავსი პროდუქტები ===== -->
+    @if (related().length) {
+        <section class="related">
+            <div class="related-inner">
+                <h2>{{ 'PRODUCTS.RELATED' | translate }}</h2>
+                <div class="related-grid">
+                    @for (r of related(); track r.id) {
+                        <app-product-card [product]="r" />
+                    }
+                </div>
+            </div>
+        </section>
+    }
+
+} @else {
+
+    <!-- ასეთი id არ არსებობს -->
+    <div class="not-found">
+        <h1>{{ 'PRODUCTS.NOT_FOUND' | translate }}</h1>
+        <a routerLink="/products">← {{ 'PRODUCTS.BACK' | translate }}</a>
+    </div>
+
+}
