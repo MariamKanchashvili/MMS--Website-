@@ -15,7 +15,7 @@
     animation: fadeUp 0.8s ease-out both;
 
     h1{
-        font-size: clamp(28px, 4vw + 10px, 38px);
+        font-size: clamp(24px, 4vw + 10px, 38px);
         font-weight: 600;
         margin-bottom: 12px;
     }
@@ -62,11 +62,12 @@
 // ----- 2. მიმართულების ჩანართები -----
 .tabs{
     display: flex;
+    flex-wrap: wrap;
     gap: 4px;
     border-bottom: 1px solid #e3e8ef;
     margin-bottom: 24px;
-    overflow-x: auto;              // მობილურზე ჰორიზონტალურად სქროლავს
-    scrollbar-width: none;         // სქროლის ზოლი დამალულია
+    // overflow-x: auto;              // მობილურზე ჰორიზონტალურად სქროლავს
+    // scrollbar-width: none;         // სქროლის ზოლი დამალულია
 }
 
 .tab{
@@ -281,6 +282,34 @@
 // =========================================
 // რესპონსივი
 // =========================================
+@media screen and (max-width: 850px){
+    .tabs{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);   // 2 სვეტი
+        gap: 8px;
+        border-bottom: none;                      // ქვედა ხაზი აღარ გვჭირდება
+    }
+
+    .tab{
+        padding: 12px 10px;
+        margin-bottom: 0;
+        border: 1px solid #dfe5ec;
+        border-radius: 4px;
+        background: #fff;
+        font-size: 14px;
+        text-align: center;
+        white-space: normal;    // გრძელი სიტყვა ორ ხაზზე გადავა და არ გასცდება
+
+        &--active{
+            background: $color-logo-blue;
+            border-color: $color-logo-blue;
+            color: #fff;
+        }
+        &:last-child:nth-child(odd){
+            grid-column: 1/-1;
+        }
+    }
+}
 @media screen and (max-width: 700px){
     .toolbar{ flex-direction: column; }
     .select{ min-width: 0; width: 100%; }
@@ -289,6 +318,15 @@
         width: 100%;               // ქვეჯგუფის სათაური ცალკე ხაზზე
         min-width: 0;
     }
+}
+@media screen and (max-width:480px){
+    .tab{font-size: 12px;}
+    .select{font-size: 13px;}
+   .search{
+    input{font-size: 12px;}
+   }
+   .subtitle{font-size: 14px;}
+   .results-bar{flex-direction: column;}
 }
 
 @media (prefers-reduced-motion: reduce){

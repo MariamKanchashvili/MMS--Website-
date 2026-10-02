@@ -51,6 +51,7 @@
     img{
         object-fit: contain;
         padding: 32px;
+         transition: transform 0.35s ease;
     }
 }
 
@@ -191,7 +192,7 @@
     margin-bottom: 40px;
 
     h2{
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 600;
         color: $color-logo-blue;
         margin-bottom: 18px;
@@ -381,7 +382,24 @@
         align-items: flex-start;
     }
 }
+@media screen and (max-width:470px){
+    .description,.features,.sizes{font-size: 14.5px; h2{font-size: 17px; }}
+    .contact-box{font-size: 14.5px; h2{font-size: 17px; margin-bottom: 25px;}}
 
+    
+    
+  
+  
+}
 @media (prefers-reduced-motion: reduce){
     .gallery, .info{ animation: none; }
+}
+@media (hover: hover){
+    .main-image{
+        cursor: zoom-in;
+
+        &:hover img{
+            transform: scale(2);   // 2-ჯერ: დეტალები კარგად ჩანს
+        }
+    }
 }

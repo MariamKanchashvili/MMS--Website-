@@ -20,9 +20,11 @@
 
             <!-- ===== 2. ფოტოები ===== -->
             <div class="gallery">
-                <div class="main-image">
+                <div class="main-image"   (mousemove)="onZoomMove($event)"
+     (mouseleave)="resetZoom()">
                     @if (images().length) {
-                        <img [ngSrc]="images()[selectedImage()]" fill priority [alt]="p.name">
+                          <img [ngSrc]="images()[selectedImage()]" fill priority [alt]="p.name"
+             [style.transform-origin]="zoomOrigin()">
                     } @else {
                         <svg class="placeholder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="3" width="18" height="18" rx="2"/>

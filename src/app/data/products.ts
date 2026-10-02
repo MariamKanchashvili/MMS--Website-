@@ -39,13 +39,13 @@ export const PRODUCTS: Product[] = [
     direction: 'coronary',
     category: 'stent',
     manufacturer: 'medtronic',
-    // image: 'images/products/onyx-truecor.webp',
+    image: 'images/products/trucor.jpg',
     // gallery: ['images/products/onyx-truecor-2.webp'],
     sizes: [
       { param: 'diameter', range: '2.25–5.0', unit: 'mm' },
       { param: 'length',   range: '8–38',     unit: 'mm' },
     ],
-    // documents: [{ type: 'ifu', file: 'docs/onyx-truecor-ifu.pdf' }],
+     documents: [{ type: 'brochure', file: 'docs/onyx-trucor-brochure.pdf' }],
   },
 ];
 

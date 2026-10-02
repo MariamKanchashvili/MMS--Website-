@@ -1,4 +1,4 @@
-import { Component, computed, input, linkedSignal } from '@angular/core';
+import { Component, computed, input, linkedSignal, signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -58,4 +58,24 @@ export class ProductDetail {
   toLines(text: string): string[] {
     return text.split('\n').filter(line => line.trim() !== '');
   }
+
+  // გადიდების წერტილი: თავიდან ცენტრი
+  zoomOrigin = signal('50% 50%');
+ // კურსორის მოძრაობისას: ვითვლით, ფოტოს რომელ წერტილზეა (პროცენტებში)
+  onZoomMove(event: MouseEvent) {
+    // ფოტოს ჩარჩოს პოზიცია და ზომა ეკრანზე
+    const box = (event.currentTarget as HTMLElement).getBoundingClientRect();
+
+    // კურსორის მდებარეობა ჩარჩოს შიგნით: 0% (მარცხენა/ზედა) → 100% (მარჯვენა/ქვედა)
+    const x = ((event.clientX - box.left) / box.width) * 100;
+    const y = ((event.clientY - box.top) / box.height) * 100;
+
+    this.zoomOrigin.set(`${x}% ${y}%`);
+  }
+
+  // კურსორი გავიდა: ისევ ცენტრი
+  resetZoom() {
+    this.zoomOrigin.set('50% 50%');
+  }
+
 }

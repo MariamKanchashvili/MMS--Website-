@@ -19,6 +19,7 @@ const PAGE_SIZE = 12;
 export class Products {
   private router = inject(Router);
 
+ 
  private translate = inject(TranslateService);
 
   // მიმდინარე ენა სიგნალად: ენის შეცვლისას ძებნა თავიდან დაითვლება
