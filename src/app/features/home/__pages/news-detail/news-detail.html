@@ -6,19 +6,24 @@
         <p class="date">{{ item.date | date: 'dd.MM.yyyy' }}</p>
         <h1>{{ ('NEWS.' + item.id + '.TITLE') | translate }}</h1>
 
-        <div class="cover">
+        <!-- მთავარი ფოტო: დაჭერით იხსნება ლაითბოქსში (ფოტო #0) -->
+        <button type="button" class="cover"
+                [attr.aria-label]="'COMMON.EXPAND' | translate"
+                (click)="lightboxIndex.set(0)">
             <img [ngSrc]="item.image" fill priority alt="">
-        </div>
+        </button>
 
         <div class="text">{{ ('NEWS.' + item.id + '.TEXT') | translate }}</div>
 
-        <!-- დამატებითი ფოტოები -->
+        <!-- დამატებითი ფოტოები: i + 1, რადგან #0 მთავარი ფოტოა -->
         @if (item.gallery?.length) {
             <div class="gallery">
-                @for (photo of item.gallery; track photo) {
-                    <div class="gallery-item">
+                @for (photo of item.gallery; track photo; let i = $index) {
+                    <button type="button" class="gallery-item"
+                            [attr.aria-label]="'COMMON.EXPAND' | translate"
+                            (click)="lightboxIndex.set(i + 1)">
                         <img [ngSrc]="photo" fill alt="">
-                    </div>
+                    </button>
                 }
             </div>
         }
@@ -36,6 +41,15 @@
                 </div>
             </div>
         </section>
+    }
+
+    <!-- ===== ლაითბოქსი: მხოლოდ გახსნისას ===== -->
+    @if (lightboxIndex() !== null) {
+        <app-lightbox
+            [images]="images()"
+            [start]="lightboxIndex()!"
+            [alt]="('NEWS.' + item.id + '.TITLE') | translate"
+            (closed)="lightboxIndex.set(null)" />
     }
 
 } @else {

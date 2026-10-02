@@ -130,8 +130,12 @@
     "CTA_PARTNER": "Partnership terms"
   },
   "COMMON": {
-    "SCROLL_TOP": "Back to top"
-  },
+  "SCROLL_TOP": "Back to top",
+  "CLOSE": "Close",
+  "PREV": "Previous",
+  "NEXT": "Next",
+  "EXPAND": "View full screen"
+},
   "CONTACT_PAGE": {
     "TITLE": "Contact",
     "SUBTITLE": "Get in touch with any question about our products, delivery or partnership.",

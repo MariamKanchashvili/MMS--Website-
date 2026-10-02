@@ -1,0 +1,34 @@
+<!-- მუქი ფონი: მასზე დაჭერა ხურავს -->
+<div class="overlay" (click)="close()"
+     role="dialog" aria-modal="true" [attr.aria-label]="alt()">
+
+    <!-- დახურვა -->
+    <button type="button" class="close" (click)="close()"
+            [attr.aria-label]="'COMMON.CLOSE' | translate">✕</button>
+
+    <!-- ფოტო. $event.stopPropagation(): ფოტოზე დაჭერა ფონამდე არ „ჩავიდეს" და არ დახუროს -->
+    <figure class="stage"
+            (click)="$event.stopPropagation()"
+            (touchstart)="onTouchStart($event)"
+            (touchend)="onTouchEnd($event)">
+
+        <!-- @for track-ით: ფოტოს შეცვლისას img თავიდან იქმნება და ანიმაცია ხელახლა ეშვება -->
+        @for (src of [images()[current()]]; track src) {
+            <img [src]="src" [alt]="alt()">
+        }
+
+        @if (hasMany()) {
+            <figcaption class="counter">{{ current() + 1 }} / {{ images().length }}</figcaption>
+        }
+    </figure>
+
+    <!-- წინა / შემდეგი: მხოლოდ თუ 1-ზე მეტი ფოტოა -->
+    @if (hasMany()) {
+        <button type="button" class="nav nav--prev"
+                (click)="prev(); $event.stopPropagation()"
+                [attr.aria-label]="'COMMON.PREV' | translate">‹</button>
+        <button type="button" class="nav nav--next"
+                (click)="next(); $event.stopPropagation()"
+                [attr.aria-label]="'COMMON.NEXT' | translate">›</button>
+    }
+</div>

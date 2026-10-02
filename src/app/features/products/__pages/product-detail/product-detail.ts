@@ -6,10 +6,10 @@ import { PRODUCTS, getProduct } from '../../../../data/products';
 import { getManufacturer } from '../../../../data/manufacturers';
 import { CONTACT_INFO } from '../../../../data/contact-info';
 import { ProductCard } from '../../__components/product-card/product-card';
-
+import { Lightbox } from '../../../../shared/lightbox/lightbox';
 @Component({
   selector: 'app-product-detail',
-  imports: [NgOptimizedImage, RouterLink, TranslatePipe, ProductCard],
+  imports: [NgOptimizedImage, RouterLink, TranslatePipe, ProductCard,Lightbox],
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.scss',
 })
@@ -59,6 +59,11 @@ export class ProductDetail {
     return text.split('\n').filter(line => line.trim() !== '');
   }
 
+  
+  // დეტალურ გვერდზე სურათის გადიდება : 
+
+
+ lightboxOpen = signal(false);
   // გადიდების წერტილი: თავიდან ცენტრი
   zoomOrigin = signal('50% 50%');
  // კურსორის მოძრაობისას: ვითვლით, ფოტოს რომელ წერტილზეა (პროცენტებში)

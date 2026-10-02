@@ -1,0 +1,115 @@
+@use 'shared_variables' as *;
+
+// მთელ ეკრანზე, ყველაფრის ზემოთ (header-იც კი)
+.overlay{
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: grid;
+    place-items: center;
+    padding: 64px 72px;
+    background: rgba(8, 20, 38, 0.95);
+    cursor: zoom-out;
+    animation: fadeIn 0.25s ease-out;
+}
+
+.stage{
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    cursor: default;
+
+    img{
+        display: block;
+        max-width: min(1100px, 100%);
+        max-height: calc(100dvh - 128px);   // ეკრანის სიმაღლეს არ გასცდეს
+        object-fit: contain;
+        background: #fff;                   // პროდუქტის ფოტოები თეთრ ფონზე
+        border-radius: 4px;
+        padding: 16px;
+        animation: zoomIn 0.3s ease-out;
+    }
+}
+
+.counter{
+    position: absolute;
+    left: 50%;
+    bottom: -36px;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+}
+
+// ===== ღილაკები =====
+.close,
+.nav{
+    position: absolute;
+    display: grid;
+    place-items: center;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+
+    &:hover{
+        background: $color-logo-gold;
+        color: $color-logo-blue;
+    }
+
+    &:focus-visible{
+        outline: 2px solid $color-logo-gold;
+        outline-offset: 3px;
+    }
+}
+
+.close{
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+}
+
+.nav{
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    font-size: 32px;
+    line-height: 1;
+
+    &--prev{ left: 16px; }
+    &--next{ right: 16px; }
+}
+
+@keyframes fadeIn{
+    from{ opacity: 0; }
+    to{ opacity: 1; }
+}
+
+@keyframes zoomIn{
+    from{ opacity: 0; transform: scale(0.96); }
+    to{ opacity: 1; transform: scale(1); }
+}
+
+// ===== მობილური =====
+@media screen and (max-width: 600px){
+    .overlay{ padding: 64px 12px; }
+
+    .stage img{ padding: 8px; }
+
+    // ისრები ქვემოთ, ცერით მისაწვდომად
+    .nav{
+        top: auto;
+        bottom: 16px;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .overlay, .stage img{ animation: none; }
+}

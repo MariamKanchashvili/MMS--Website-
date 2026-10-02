@@ -131,6 +131,27 @@
     to{ opacity: 1; transform: translateY(0); }
 }
 
+// ===== ღილაკად ქცეული ფოტოები =====
+// ბრაუზერი ღილაკს თავის სტილს აძლევს (ჩარჩო, ფონი, padding), ამიტომ ვაშორებთ
+.cover,
+.gallery-item{
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: zoom-in;
+
+    &:focus-visible{
+        outline: 3px solid $color-logo-gold;
+        outline-offset: 3px;
+    }
+}
+
+
+// =========================
+// რესპონსივი
+// =========================
 @media screen and (max-width: 900px){
     .other-grid{ grid-template-columns: repeat(2, 1fr); }
 }
